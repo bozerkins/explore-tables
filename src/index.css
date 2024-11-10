@@ -1,0 +1,63 @@
+/* Main Page Container */
+.page-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px;
+    background-color: #f4f6f9;
+    /* Light gray for a clean background */
+    font-family: 'Roboto', sans-serif;
+    color: #333;
+    min-height: 100vh;
+}
+
+/* Page Title Styling */
+.page-title {
+    font-size: 2.5em;
+    font-weight: 700;
+    color: #1e88e5;
+    /* Matches the table header color */
+    margin-bottom: 30px;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Subtitle or Description Styling (optional) */
+.page-subtitle {
+    font-size: 1.2em;
+    color: #666;
+    margin-bottom: 20px;
+    text-align: center;
+    max-width: 800px;
+}
+
+/* Table Container for consistent layout */
+.table-container {
+    width: 100%;
+    max-width: 1200px;
+    /* Restrict table width for readability */
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    /* Soft shadow for a card-like effect */
+}
+
+/* Responsive Table Overflow */
+.table-container .explore-table-container {
+    overflow-x: auto;
+}
+
+/* Table Styling - Overrides */
+.explore-table {
+    width: 100%;
+    margin: 0;
+    /* Remove default margin */
+    border-collapse: collapse;
+}
+
+/* Additional Page Spacing */
+.page-container+.page-container {
+    margin-top: 40px;
+}

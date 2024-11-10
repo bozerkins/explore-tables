@@ -1,34 +1,42 @@
 import React from "react";
 import PivotTableMatrix from "./PivotTableMatrix";
+import PivotTitle from "./TableParts/PivotTitle";
+import PivotValue from "./TableParts/PivotValue";
+import TableContainer from "./TableParts/TableContainer";
+import Table from "./TableParts/Table";
+import ColumnTitle from "./TableParts/ColumnTitle";
+import MeasureTitle from "./TableParts/MeasureTitle";
+import ColumnValue from "./TableParts/ColumnValue";
+import MeasureValue from "./TableParts/MeasureValue";
 
-const PivotTable = ({ matrix }: { matrix: PivotTableMatrix }) => {
+export const emptySign = "∅";
+
+export const PivotTable = ({ matrix }: { matrix: PivotTableMatrix }) => {
     console.log("Received matrix", matrix);
-    const emptySign = "∅";
     const pivotValueMapSize = matrix.pivotValueMap.length;
     const numberOfPivotValuesAdjustedForEmptyRows = !pivotValueMapSize ? 1 : pivotValueMapSize;
     const measuresAdjustedForPivots = Array(numberOfPivotValuesAdjustedForEmptyRows).fill(matrix.measures).flat();
 
-    return <div>
-        <h1>Pivot Table!</h1>
-        <table border={1} cellPadding={10}>
+    return <TableContainer>
+        <Table border={1} cellPadding={10}>
             <tbody>
                 {/* Draw pivots */}
                 {matrix.pivots.map(pivot => {
                     return <tr key={pivot}>
                         {/* Draw pivot titles */}
-                        <td colSpan={matrix.measures.length}>{pivot}</td>
+                        <PivotTitle title={pivot} colSpan={matrix.measures.length} />
                         {/* Draw pivot values (when any pivot is selected) */}
                         {matrix.pivotValueMap.length > 0 &&
                             matrix.pivotValueMap.map(({ valueMap }, index) => {
                                 const value = valueMap.has(pivot) ? valueMap.get(pivot) : null;
                                 if (value === null) {
-                                    return <td key={index}>{emptySign}</td>
+                                    return <PivotValue key={index} empty />
                                 }
-                                return <td key={index} colSpan={matrix.measures.length}>{value}</td>;
+                                return <PivotValue key={index} value={value} colSpan={matrix.measures.length} />;
                             })}
                         {/* Draw default pivot value (when no pivots selected) */}
                         {matrix.pivotValueMap.length === 0 && (
-                            <td colSpan={matrix.measures.length}>{emptySign}</td>
+                            <PivotValue colSpan={matrix.measures.length} empty />
                         )}
                     </tr>
                 })}
@@ -37,23 +45,23 @@ const PivotTable = ({ matrix }: { matrix: PivotTableMatrix }) => {
                     {/* Draw column titles */}
                     {matrix.columns.length > 0 &&
                         matrix.columns.map((column, index) => {
-                            return <td key={index}>{column}</td>
+                            return <ColumnTitle key={index} title={column} />
                         })}
                     {/* Draw special case when no column selected by any pivot selected */}
                     {matrix.columns.length === 0 && matrix.pivots.length > 0 && (
-                        <td>{emptySign}</td>
+                        <ColumnTitle empty />
                     )}
                     {/* Draw measure titles */}
                     {matrix.measures.length > 0 &&
                         measuresAdjustedForPivots.map((measure, index) => {
-                            return <td key={index}>{measure}</td>
+                            return <MeasureTitle key={index} title={measure} />
                         })}
                     {/* Draw special case when no measures selected by any pivot selected */}
                     {matrix.measures.length === 0 && matrix.pivots.length > 0 && (
                         Array(numberOfPivotValuesAdjustedForEmptyRows)
                             .fill({})
                             .map((_, index) => {
-                                return <td key={index}>{emptySign}</td>
+                                return <MeasureTitle key={index} empty />
                             }))}
                 </tr>
                 {/* Draw rows */}
@@ -63,32 +71,29 @@ const PivotTable = ({ matrix }: { matrix: PivotTableMatrix }) => {
                         {matrix.columns.map((column, index) => {
                             const value = columnValueMap.has(column) ? columnValueMap.get(column) : null;
                             if (value === null) {
-                                return <td key={index}>{emptySign}</td>
+                                return <ColumnValue key={index} empty />
                             }
-                            return <td key={index}>{value}</td>
+                            return <ColumnValue key={index} value={value} />
                         })}
                         {/* Draw special case when no column selected by any pivot selected */}
                         {matrix.columns.length === 0 && matrix.pivots.length > 0 && (
-                            <td>{emptySign}</td>
+                            <ColumnValue empty />
                         )}
                         {/* Draw measure values */}
-                        {children.map(({ pivotValueMap, measureValueMap }, index) => {
+                        {children.map(({ measureValueMap }, index) => {
                             return <React.Fragment key={index}>
                                 {[...measureValueMap.values()].map((value, index) => {
                                     if (value === null) {
-                                        return <td key={index}>{emptySign}</td>
+                                        return <MeasureValue key={index} empty />
                                     }
-                                    return <td key={index}>{value}</td>
+                                    return <MeasureValue key={index} value={value} />
                                 })}
-                                {measureValueMap.size === 0 && (<td>{emptySign}</td>)}
+                                {measureValueMap.size === 0 && (<MeasureValue empty />)}
                             </React.Fragment>
                         })}
                     </tr>;
                 })}
             </tbody>
-
-        </table>
-    </div>
+        </Table>
+    </TableContainer>
 };
-
-export default PivotTable;

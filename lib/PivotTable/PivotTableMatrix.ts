@@ -96,7 +96,7 @@ class PivotTableMatrix {
                     // create node in tree
                     const pivotHash = pivotValueMap.hash;
                     const pivotNode = {
-                        pivotValueMap: pivotValueMap.valueMap,
+                        pivotValueMap: pivotValueMap.valueMap, // TODO: this might not be needed
                         measureValueMap: new Map(),
                     };
                     columnNode.children.set(pivotHash, pivotNode);
