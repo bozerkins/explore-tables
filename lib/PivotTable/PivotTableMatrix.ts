@@ -37,7 +37,7 @@ class PivotTableMatrix {
      * @param payload 
      * @param config 
      */
-    static createFromPayload(payload: PivotTableMatrixPayload, config: PivotConfig): any {
+    static createFromPayload(payload: PivotTableMatrixPayload, config: PivotConfig): PivotTableMatrix {
         function createValueMaps(rows: Array<any>, fields: Array<string>): Array<ValueMap> {
             const valueMaps = new Map<string, { hash: string, valueMap: Map<string, any> }>();
 

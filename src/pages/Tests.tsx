@@ -1,7 +1,7 @@
 import { useState } from "react";
 import Default from "../datasets/Default";
 import React from "react";
-import { PivotTable, PivotTableMatrix } from "../../lib/main";
+import { PivotTable } from "../../lib/main";
 
 export default () => {
     const [showOnlyOne, setShowOnlyOne] = useState<number | null>(null);
@@ -17,7 +17,6 @@ export default () => {
                             if (showOnlyOne !== null && showOnlyOne !== index) {
                                 return <React.Fragment key={index}></React.Fragment>;
                             }
-                            const matrix = PivotTableMatrix.createFromPayload({ rows, fields }, { measures, pivots })
                             console.log("Starting " + name);
                             return (
                                 <div key={index}>
@@ -57,7 +56,7 @@ export default () => {
                                             <pre>{JSON.stringify(sorting)}</pre>
                                         </div>
                                     </div>
-                                    <PivotTable matrix={matrix} />
+                                    <PivotTable rows={rows} fields={fields} measures={measures} pivots={pivots} />
                                 </div>
                             );
                         })}

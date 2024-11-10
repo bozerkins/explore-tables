@@ -1,4 +1,4 @@
-import { PivotTable, PivotTableMatrix } from "../../lib/main"
+import { PivotTable } from "../../lib/main"
 import { generateRandomDataset } from "../datasets/Randomizer";
 
 export default () => {
@@ -11,7 +11,6 @@ export default () => {
         { id: 'five' },
         { id: 'six' },
     ];
-    const matrix = PivotTableMatrix.createFromPayload({ rows, fields }, { measures: ["five", "six"], pivots: ["two", "four"] })
     return <div className="page-container">
         {/* Page Title */}
         <h1 className="page-title">Data Analysis Dashboard</h1>
@@ -21,7 +20,7 @@ export default () => {
 
         {/* Table Container */}
         <div className="table-container">
-            <PivotTable matrix={matrix} />
+            <PivotTable rows={rows} fields={fields} measures={["five", "six"]} pivots={["two", "four"]} />
         </div>
     </div>
 }

@@ -95,3 +95,8 @@
 .explore-table-row:nth-of-type(2n) .explore-measure-value {
     background: var(--explore-second-value-blend);
 }
+
+.explore-empty-sign {
+    color: gray;
+    font-weight: normal;
+}
