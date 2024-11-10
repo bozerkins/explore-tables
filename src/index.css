@@ -1,63 +1,114 @@
-/* Main Page Container */
-.page-container {
+/* App.css */
+
+/* Reset some styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f7fc;
+    color: #333;
+}
+
+/* App Layout */
+.app {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    padding: 40px;
-    background-color: #f4f6f9;
-    /* Light gray for a clean background */
-    font-family: 'Roboto', sans-serif;
-    color: #333;
     min-height: 100vh;
+    padding: 0 20px;
 }
 
-/* Page Title Styling */
-.page-title {
-    font-size: 2.5em;
-    font-weight: 700;
-    color: #1e88e5;
-    /* Matches the table header color */
-    margin-bottom: 30px;
-    text-align: center;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-}
-
-/* Subtitle or Description Styling (optional) */
-.page-subtitle {
-    font-size: 1.2em;
-    color: #666;
-    margin-bottom: 20px;
-    text-align: center;
-    max-width: 800px;
-}
-
-/* Table Container for consistent layout */
-.table-container {
-    width: 100%;
-    max-width: 1200px;
-    /* Restrict table width for readability */
+/* Header Styles */
+.header {
+    background-color: #007bff;
+    color: white;
     padding: 20px;
-    background-color: #ffffff;
+    text-align: center;
     border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+}
+
+.header h1 {
+    font-size: 2rem;
+}
+
+/* Main Content */
+.mainContent {
+    flex: 1;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+/* Links to the Demo Pages */
+.demoLinks {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    /* Centers the links horizontally */
+    gap: 20px;
+    flex-wrap: wrap;
+    /* Allows wrapping to the next line if space is limited */
+    margin-top: 20px;
+}
+
+.demoLinks li {
+    font-size: 1.2rem;
+}
+
+.demoLinks a {
+    text-decoration: none;
+    color: #007bff;
+    background-color: #e7f3ff;
+    padding: 12px 25px;
+    border-radius: 25px;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.demoLinks a:hover {
+    background-color: #0056b3;
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Footer Styles */
+.footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 15px;
+    border-radius: 8px;
+    margin-top: 20px;
+}
+
+/* Demo Section Styling */
+.demoSection {
+    background-color: #ffffff;
+    padding: 30px;
+    margin-bottom: 40px;
+    border-radius: 10px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    /* Soft shadow for a card-like effect */
 }
 
-/* Responsive Table Overflow */
-.table-container .explore-table-container {
-    overflow-x: auto;
+.demoSection h2 {
+    color: #333;
+    margin-bottom: 20px;
+    font-size: 1.8rem;
 }
 
-/* Table Styling - Overrides */
-.explore-table {
-    width: 100%;
-    margin: 0;
-    /* Remove default margin */
-    border-collapse: collapse;
-}
-
-/* Additional Page Spacing */
-.page-container+.page-container {
-    margin-top: 40px;
+.pivotContainer {
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    color: #666;
+    font-size: 1.1rem;
+    box-shadow: inset 0 4px 8px rgba(0, 0, 0, 0.05);
 }
