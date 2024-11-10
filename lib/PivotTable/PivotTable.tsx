@@ -8,6 +8,7 @@ import ColumnTitle from "./TableParts/ColumnTitle";
 import MeasureTitle from "./TableParts/MeasureTitle";
 import ColumnValue from "./TableParts/ColumnValue";
 import MeasureValue from "./TableParts/MeasureValue";
+import TableRow from "./TableParts/TableRow";
 
 export const emptySign = "∅";
 
@@ -22,7 +23,7 @@ export const PivotTable = ({ matrix }: { matrix: PivotTableMatrix }) => {
             <tbody>
                 {/* Draw pivots */}
                 {matrix.pivots.map(pivot => {
-                    return <tr key={pivot}>
+                    return <TableRow key={pivot}>
                         {/* Draw pivot titles */}
                         <PivotTitle title={pivot} colSpan={matrix.measures.length} />
                         {/* Draw pivot values (when any pivot is selected) */}
@@ -38,10 +39,10 @@ export const PivotTable = ({ matrix }: { matrix: PivotTableMatrix }) => {
                         {matrix.pivotValueMap.length === 0 && (
                             <PivotValue colSpan={matrix.measures.length} empty />
                         )}
-                    </tr>
+                    </TableRow>
                 })}
                 {/* Draw column and measure titles */}
-                <tr>
+                <TableRow>
                     {/* Draw column titles */}
                     {matrix.columns.length > 0 &&
                         matrix.columns.map((column, index) => {
@@ -63,10 +64,10 @@ export const PivotTable = ({ matrix }: { matrix: PivotTableMatrix }) => {
                             .map((_, index) => {
                                 return <MeasureTitle key={index} empty />
                             }))}
-                </tr>
+                </TableRow>
                 {/* Draw rows */}
                 {matrix.valueMapTree.map(({ columnValueMap, children }, index) => {
-                    return <tr key={index}>
+                    return <TableRow key={index}>
                         {/* Draw column values */}
                         {matrix.columns.map((column, index) => {
                             const value = columnValueMap.has(column) ? columnValueMap.get(column) : null;
@@ -91,7 +92,7 @@ export const PivotTable = ({ matrix }: { matrix: PivotTableMatrix }) => {
                                 {measureValueMap.size === 0 && (<MeasureValue empty />)}
                             </React.Fragment>
                         })}
-                    </tr>;
+                    </TableRow>;
                 })}
             </tbody>
         </Table>

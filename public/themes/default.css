@@ -1,123 +1,97 @@
-/* Importing a clean font for data tables */
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
-
-body {
-    font-family: 'Roboto', sans-serif;
-}
-
-/* Container for table with horizontal overflow */
 .explore-table-container {
-    overflow-x: auto;
+    --explore-main-color: #3e5488;
+    --explore-second-color: #883e54;
+
+    --explore-main-border-color: color-mix(in srgb, var(--explore-main-color), white 65%);
+    --explore-main-title: color-mix(in srgb, var(--explore-main-color), white 70%);
+    --explore-main-title-blend: color-mix(in srgb, var(--explore-main-color), white 80%);
+    --explore-main-value: color-mix(in srgb, var(--explore-main-color), white 85%);
+    --explore-main-value-blend: color-mix(in srgb, var(--explore-main-color), white 95%);
+
+    --explore-second-border-color: color-mix(in srgb, var(--explore-second-color), white 65%);
+    --explore-second-title: color-mix(in srgb, var(--explore-second-color), white 70%);
+    --explore-second-value: color-mix(in srgb, var(--explore-second-color), white 85%);
+    --explore-second-value-blend: color-mix(in srgb, var(--explore-second-color), white 95%);
 }
 
-/* Base table styles */
+.explore-table-container {
+    margin: 20px 0;
+    overflow: auto;
+    font-family: 'Open Sans';
+}
+
 .explore-table {
     width: 100%;
     border-collapse: collapse;
     font-size: 1em;
-    margin-top: 20px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    font-family: 'Roboto', sans-serif;
     color: #333;
-}
-
-/* Header and cell padding, alignment */
-.explore-table th,
-.explore-table td {
-    padding: 12px 15px;
-    border-bottom: 1px solid #ddd;
-    text-align: left;
-}
-
-/* General table header styles */
-.explore-table th {
-    background-color: #1e88e5;
-    /* Deep blue */
-    color: #ffffff;
-    text-transform: uppercase;
-    font-weight: 500;
-}
-
-/* Row styles for alternating colors */
-.explore-table tr:nth-child(even) {
-    background-color: #f1f8ff;
-    /* Light blue */
-}
-
-.explore-table tr:nth-child(odd) {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
     background-color: #ffffff;
 }
 
-.explore-table tr:hover {
-    background-color: #e3f2fd;
+.explore-table tr td {
+    font-size: 0.8em;
+    padding: 4px 8px;
+    border-bottom: 1px solid;
 }
 
-/* Distinct cell styles for pivot table sections */
-
-/* Generic data cells */
-.explore-cell {
-    color: #333;
+.explore-table .explore-pivot-title,
+.explore-table .explore-column-title,
+.explore-table .explore-measure-title {
+    font-weight: 600;
+    white-space: nowrap;
 }
 
-/* Column Titles (typically main categories in a pivot table) */
-.explore-column-title {
-    font-weight: bold;
-    background-color: #ffcc80;
-    /* Light orange */
-    color: #6d4c41;
-    /* Dark brown */
-    text-transform: uppercase;
-    text-align: center;
+.explore-table .explore-column-title,
+.explore-table .explore-column-value {
+    border-left: 1px solid;
+    border-right: 1px solid;
+    border-color: var(--explore-main-border-color);
 }
 
-/* Column Values (subcategory or grouped data) */
-.explore-column-value {
-    background-color: #fff8e1;
-    /* Very light orange */
-    color: #5d4037;
-    /* Medium brown */
+.explore-table .explore-pivot-title,
+.explore-table .explore-pivot-value {
+    border-left: 1px solid;
+    border-right: 1px solid;
+    border-color: var(--explore-main-border-color);
 }
 
-/* Pivot Titles (e.g., row labels in pivot tables) */
-.explore-pivot-title {
-    font-weight: bold;
-    background-color: #b39ddb;
-    /* Lavender */
-    color: #4a148c;
-    /* Dark purple */
-    padding-left: 20px;
-    /* Indentation for hierarchy */
-    text-transform: capitalize;
-}
-
-/* Pivot Values */
-.explore-pivot-value {
-    background-color: #ede7f6;
-    /* Light lavender */
-    color: #311b92;
-    /* Medium purple */
-}
-
-/* Measure Titles (subgroup titles like "Sum of Sales") */
-.explore-measure-title {
-    font-weight: bold;
-    background-color: #80cbc4;
-    /* Light teal */
-    color: #004d40;
-    /* Dark teal */
-}
-
-/* Measure Values (numerical data cells) */
-.explore-measure-value {
-    color: #004d40;
-    /* Dark teal */
-    background-color: #e0f2f1;
-    /* Very light teal */
+.explore-table .explore-measure-title,
+.explore-table .explore-measure-value {
+    border-left: 1px solid;
+    border-right: 1px solid;
     text-align: right;
-    font-weight: bold;
+    border-color: var(--explore-second-border-color);
 }
 
-/* Optional: Center-align column titles for better look */
-.explore-table th.explore-column-title {
-    text-align: center;
+.explore-table-row:nth-of-type(2n + 1) .explore-pivot-title {
+    background: var(--explore-main-title);
+}
+
+.explore-table-row:nth-of-type(2n + 1) .explore-pivot-value {
+    background: var(--explore-main-title);
+}
+
+.explore-table-row:nth-of-type(2n) .explore-pivot-title {
+    background: var(--explore-main-value);
+}
+
+.explore-table-row:nth-of-type(2n) .explore-pivot-value {
+    background: var(--explore-main-value);
+}
+
+.explore-column-title {
+    background: var(--explore-main-title-blend);
+}
+
+.explore-measure-title {
+    background: var(--explore-second-value);
+}
+
+.explore-table-row:nth-of-type(2n) .explore-column-value {
+    background: var(--explore-main-value-blend);
+}
+
+.explore-table-row:nth-of-type(2n) .explore-measure-value {
+    background: var(--explore-second-value-blend);
 }

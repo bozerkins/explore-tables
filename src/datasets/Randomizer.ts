@@ -12,7 +12,8 @@ function generateRandomDataset(count: number = 50): TableRow[] {
     const oneValues = ['alpha', 'beta', 'gamma', 'delta', 'epsilon', 'omega', 'sigma', 'theta'];
     // const twoValues = ['blabla', 'yolo', 'miau', 'kuku', 'wow', 'awesome', 'cool', 'nice'];
     const twoValues = ['blabla', 'yolo',];
-    const fourValues = ['blabla', 'olala', 'hello', 'world', 'test', 'data', 'random'];
+    // const fourValues = ['blabla', 'olala', 'hello', 'world', 'test', 'data', 'random'];
+    const fourValues = ['blabla', 'olala', 'hello', 'world'];
     const fiveValues = ['blabla', 'value1', 'value2', 'value3', 'value4', 'value5'];
 
     const getRandomElement = <T>(arr: T[]): T =>
