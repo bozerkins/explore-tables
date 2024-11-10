@@ -1,3 +1,4 @@
-export function helloAnything(thing: string): string {
-    return `Hello ${thing}!`
-  }
+import PivotTable from "./PivotTable/PivotTable"
+import PivotTableMatrix from "./PivotTable/PivotTableMatrix";
+
+export { PivotTable, PivotTableMatrix };
