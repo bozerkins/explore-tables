@@ -14,27 +14,6 @@ export default [
         measures: ["three"],
     },
     {
-        name: "Complex table - multiple measures and pivots",
-        fields: [{ id: "one" }, { id: "two" }, { id: "three" }],
-        rows: [
-            { one: "test", two: "blabla", three: 23, four: "blabla", five: "blabla" },
-            { one: "test2", two: "bkla", three: 3, four: "blabla", five: "blabla" },
-            { one: "test2", two: "yolo", three: 521, four: "blabla", five: "blabla" },
-            { one: "test2", two: "miau", three: 5212, four: "olala", five: "blabla" },
-            { one: "test3", two: "yolo", three: 552, four: "blabla", five: "blabla" },
-            { one: "test4", two: "kuku", three: 21, four: "blabla", five: "blabla" },
-            { one: "test5", two: "yolo", three: 33, four: "blabla", five: "blabla" },
-            { one: "test6", two: "yolo", three: 51, four: "blabla", five: "blabla" },
-            { one: "test6", two: "miau", three: 112, four: "blabla", five: "blabla" },
-        ],
-        pivots: ["two"],
-        measures: ["three"],
-        sorting: [
-            { name: "one", direction: "asc" },
-            { name: "two", direction: "desc" },
-        ],
-    },
-    {
         name: "Simple table - sorted",
         fields: [{ id: "one" }, { id: "two" }, { id: "three" }],
         rows: [
