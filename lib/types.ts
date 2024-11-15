@@ -5,5 +5,6 @@ export interface PivotTableMatrixPayload {
 
 export interface PivotConfig {
     measures: Array<string>;
+    dimensions: Array<string>;
     pivots: Array<string>;
 }

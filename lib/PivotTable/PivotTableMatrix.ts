@@ -21,9 +21,9 @@ type ValueMapTree = Array<{
 
 class PivotTableMatrix {
     constructor(
+        public measures: Array<string>,
         public columns: Array<string>,
         public pivots: Array<string>,
-        public measures: Array<string>,
         public valueMapTree: ValueMapTree,
         public columnValueMap: Array<ValueMap>,
         public pivotValueMap: Array<ValueMap>,
@@ -126,12 +126,12 @@ class PivotTableMatrix {
 
         const fields = payload.fields.map((field) => field.id);
         const measures = fields.filter((field) => config.measures.includes(field));
-        const columns = fields.filter((field) => !config.measures.includes(field) && !config.pivots.includes(field));
+        const columns = fields.filter((field) => config.dimensions.includes(field));
         const pivots = fields.filter((field) => config.pivots.includes(field));
         const pivotValueMaps = createValueMaps(payload.rows, pivots);
         const columnValueMaps = createValueMaps(payload.rows, columns);
         const valueMapTree = createDataTree(payload.rows, columns, columnValueMaps, pivots, pivotValueMaps, measures);
-        return new PivotTableMatrix(columns, pivots, measures, valueMapTree, columnValueMaps, pivotValueMaps);
+        return new PivotTableMatrix(measures, columns, pivots, valueMapTree, columnValueMaps, pivotValueMaps);
     }
 }
 

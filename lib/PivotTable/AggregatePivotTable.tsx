@@ -28,6 +28,7 @@ export default ({ matrix }: { matrix: PivotTableMatrix }) => {
                             {matrix.pivotValueMap.length > 0 &&
                                 matrix.pivotValueMap.map(({ valueMap }, index) => {
                                     const value = valueMap.has(pivot) ? valueMap.get(pivot) : null;
+                                    console.log(valueMap, value)
                                     if (value === null) {
                                         return <PivotValue key={index} colSpan={matrix.measures.length} empty />
                                     }

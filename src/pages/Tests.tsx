@@ -18,6 +18,9 @@ export default () => {
                                 return <React.Fragment key={index}></React.Fragment>;
                             }
                             console.log("Starting " + name);
+                            const dimensions = fields
+                                .map((field) => field.id)
+                                .filter((field) => !pivots.includes(field as never) && !measures.includes(field));
                             return (
                                 <div key={index}>
                                     <h5>{name}</h5>
@@ -36,11 +39,7 @@ export default () => {
                                         <div>
                                             <h6>Dimensions</h6>
                                             <pre>
-                                                {JSON.stringify(
-                                                    fields
-                                                        .map((field) => field.id)
-                                                        .filter((field) => !pivots.includes(field as never) && !measures.includes(field))
-                                                )}
+                                                {JSON.stringify(dimensions)}
                                             </pre>
                                         </div>
                                         <div>
@@ -56,7 +55,7 @@ export default () => {
                                             <pre>{JSON.stringify(sorting)}</pre>
                                         </div>
                                     </div>
-                                    <PivotTable rows={rows} fields={fields} measures={measures} pivots={pivots} />
+                                    <PivotTable rows={rows} fields={fields} measures={measures} dimensions={dimensions} pivots={pivots} />
                                 </div>
                             );
                         })}

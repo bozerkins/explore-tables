@@ -8,11 +8,12 @@ export interface PivotTableProperties {
     rows: Array<{ [key: string]: any; }>;
     fields: Array<{ id: string; name?: string; }>;
     measures: Array<string>;
+    dimensions: Array<string>;
     pivots: Array<string>;
 }
 
 export const PivotTable = ({
-    rows, fields, measures = [], pivots = []
+    rows, fields, measures = [], dimensions = [], pivots = []
 }: PivotTableProperties) => {
     // check if we need to create a complex pivot
     const isPlainTable = measures.length === 0 && pivots.length === 0;
@@ -22,7 +23,7 @@ export const PivotTable = ({
     }
 
     // create a matrix from the provided data
-    const matrix: PivotTableMatrix = PivotTableMatrix.createFromPayload({ rows, fields }, { measures, pivots })
+    const matrix: PivotTableMatrix = PivotTableMatrix.createFromPayload({ rows, fields }, { dimensions, measures, pivots })
     // render aggregate pivot table
     return <AggregatePivotTable matrix={matrix} />
 

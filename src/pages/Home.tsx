@@ -20,7 +20,7 @@ export default () => {
 
         {/* Table Container */}
         <div className="table-container">
-            <PivotTable rows={rows} fields={fields} measures={["five", "six"]} pivots={["two", "four"]} />
+            <PivotTable rows={rows} fields={fields} measures={["five", "six"]} dimensions={["one", "three"]} pivots={["two", "four"]} />
         </div>
     </div>
 }

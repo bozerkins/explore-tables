@@ -2,6 +2,7 @@ import { BrowserRouter as Router, Route, Link, Routes } from 'react-router-dom';
 import Home from "./pages/Home";
 import Tests from "./pages/Tests";
 import React from 'react';
+import Interactive from './pages/Interactive';
 
 const App: React.FC = () => {
     return (
@@ -20,14 +21,16 @@ const App: React.FC = () => {
                     <ul className="demoLinks">
                         <li><Link to="/randomized">Randomized</Link></li>
                         <li><Link to="/tests">Tests</Link></li>
+                        <li><Link to="/interactive">Interactive</Link></li>
                     </ul>
                 </main>
 
                 {/* Routes for each Demo */}
                 <Routes>
                     <Route path="/" element={<div></div>} /> Home
-                    <Route path="/randomized" element={<Home />} /> Home
+                    <Route path="/randomized" element={<Home />} /> Randomized
                     <Route path="/tests" element={<Tests />} /> Tests
+                    <Route path="/interactive" element={<Interactive />} /> Interactive
                 </Routes>
 
                 {/* Footer */}
