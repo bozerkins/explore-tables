@@ -1,5 +1,5 @@
 import { useState } from "react";
-import Default from "../datasets/Default";
+import tests from "../datasets/Tests";
 import React from "react";
 import { PivotTable } from "../../lib/main";
 
@@ -13,7 +13,7 @@ export default () => {
                 </h1>
                 <div style={{ overflow: "inherit" }}>
                     <div>
-                        {Default.map(({ name, fields, rows, pivots, measures, sorting }, index) => {
+                        {tests.map(({ name, fields, rows, pivots, measures, sorting }, index) => {
                             if (showOnlyOne !== null && showOnlyOne !== index) {
                                 return <React.Fragment key={index}></React.Fragment>;
                             }

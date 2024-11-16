@@ -18,7 +18,7 @@ export default ({ rows, fields }: PlainPivotTableProperties) => {
                         {/* Draw column titles */}
                         {fields.length > 0 &&
                             fields.map((field, index) => {
-                                return <ColumnTitle key={index} title={field.id} />
+                                return <ColumnTitle key={index} title={field.name || field.id} />
                             })}
                         {/* Draw special case when no column selected by any pivot selected */}
                         {fields.length === 0 && (

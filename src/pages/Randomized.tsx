@@ -4,12 +4,12 @@ import { generateRandomDataset } from "../datasets/Randomizer";
 export default () => {
     const rows = generateRandomDataset(650);
     const fields = [
-        { id: 'one' },
-        { id: 'two' },
-        { id: 'three' },
-        { id: 'four' },
-        { id: 'five' },
-        { id: 'six' },
+        { id: 'one', name: "One" },
+        { id: 'two', name: "Two" },
+        { id: 'three', name: "Three" },
+        { id: 'four', name: "Four" },
+        { id: 'five', name: "Five" },
+        { id: 'six', name: "Six" },
     ];
     return <div className="page-container">
         {/* Page Title */}

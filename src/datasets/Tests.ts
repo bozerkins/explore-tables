@@ -1,7 +1,7 @@
 export default [
     {
         name: "Simple table",
-        fields: [{ id: "one" }, { id: "two" }, { id: "three" }],
+        fields: [{ id: "one", name: "One" }, { id: "two", name: "Two" }, { id: "three", name: "Three" }],
         rows: [
             { one: "test", two: "blabla", three: 23 },
             { one: "test2", two: "bkla", three: 3 },
@@ -15,7 +15,7 @@ export default [
     },
     {
         name: "Simple table - sorted",
-        fields: [{ id: "one" }, { id: "two" }, { id: "three" }],
+        fields: [{ id: "one", name: "One" }, { id: "two", name: "Two" }, { id: "three", name: "Three" }],
         rows: [
             { one: "test", two: "blabla", three: 23 },
             { one: "test2", two: "bkla", three: 3 },
@@ -30,7 +30,7 @@ export default [
     },
     {
         name: "Simple table - sorted 2 fields",
-        fields: [{ id: "one" }, { id: "two" }, { id: "three" }],
+        fields: [{ id: "one", name: "One" }, { id: "two", name: "Two" }, { id: "three", name: "Three" }],
         rows: [
             { one: "test", two: "blabla", three: 23 },
             { one: "test2", two: "bkla", three: 3 },
@@ -48,7 +48,7 @@ export default [
     },
     {
         name: "Simple table - sorted measures",
-        fields: [{ id: "one" }, { id: "two" }, { id: "three" }],
+        fields: [{ id: "one", name: "One" }, { id: "two", name: "Two" }, { id: "three", name: "Three" }],
         rows: [
             { one: "test", two: "blabla", three: 23 },
             { one: "test2", two: "bkla", three: 3 },
@@ -67,21 +67,21 @@ export default [
     },
     {
         name: "Simple table - only measures",
-        fields: [{ id: "three" }],
+        fields: [{ id: "three", name: "Three" }],
         rows: [{ three: 112 }],
         pivots: [],
         measures: ["three"],
     },
     {
         name: "Simple table - only measures, no data",
-        fields: [{ id: "three" }],
+        fields: [{ id: "three", name: "Three" }],
         rows: [],
         pivots: [],
         measures: ["three"],
     },
     {
         name: "Simple table - no measures",
-        fields: [{ id: "one" }, { id: "two" }, { id: "three" }],
+        fields: [{ id: "one", name: "One" }, { id: "two", name: "Two" }, { id: "three", name: "Three" }],
         rows: [
             { one: "test", two: "blabla", three: 23 },
             { one: "test2", two: "bkla", three: 3 },
@@ -95,21 +95,21 @@ export default [
     },
     {
         name: "Simple table - no rows",
-        fields: [{ id: "one" }, { id: "two" }, { id: "three" }],
+        fields: [{ id: "one", name: "One" }, { id: "two", name: "Two" }, { id: "three", name: "Three" }],
         rows: [],
         pivots: [],
         measures: ["three"],
     },
     {
         name: "Simple table - no rows, no measures",
-        fields: [{ id: "one" }, { id: "two" }, { id: "three" }],
+        fields: [{ id: "one", name: "One" }, { id: "two", name: "Two" }, { id: "three", name: "Three" }],
         rows: [],
         pivots: [],
         measures: [],
     },
     {
         name: "Pivot table",
-        fields: [{ id: "one" }, { id: "two" }, { id: "three" }],
+        fields: [{ id: "one", name: "One" }, { id: "two", name: "Two" }, { id: "three", name: "Three" }],
         rows: [
             { one: "test", two: "blabla", three: 23 },
             { one: "test2", two: "bkla", three: 3 },
@@ -126,7 +126,7 @@ export default [
     },
     {
         name: "Pivot table - sorting",
-        fields: [{ id: "one" }, { id: "two" }, { id: "three" }],
+        fields: [{ id: "one", name: "One" }, { id: "two", name: "Two" }, { id: "three", name: "Three" }],
         rows: [
             { one: "test", two: "blabla", three: 23 },
             { one: "test2", two: "bkla", three: 3 },
@@ -144,7 +144,7 @@ export default [
     },
     {
         name: "Pivot table - sorting 2 columns",
-        fields: [{ id: "one" }, { id: "two" }, { id: "three" }],
+        fields: [{ id: "one", name: "One" }, { id: "two", name: "Two" }, { id: "three", name: "Three" }],
         rows: [
             { one: "test", two: "blabla", three: 23 },
             { one: "test2", two: "bkla", three: 3 },
@@ -165,7 +165,7 @@ export default [
     },
     {
         name: "Pivot table - sorting measures",
-        fields: [{ id: "one" }, { id: "two" }, { id: "three" }],
+        fields: [{ id: "one", name: "One" }, { id: "two", name: "Two" }, { id: "three", name: "Three" }],
         rows: [
             { one: "test", two: "blabla", three: 23 },
             { one: "test2", two: "bkla", three: 3 },
@@ -187,7 +187,7 @@ export default [
     },
     {
         name: "Pivot table - no columns",
-        fields: [{ id: "one" }, { id: "two" }, { id: "three" }],
+        fields: [{ id: "one", name: "One" }, { id: "two", name: "Two" }, { id: "three", name: "Three" }],
         rows: [
             { one: "test", two: "blabla", three: 23 },
             { one: "test2", two: "bkla", three: 3 },
@@ -204,7 +204,7 @@ export default [
     },
     {
         name: "Pivot table - no columns",
-        fields: [{ id: "one" }, { id: "two" }, { id: "three" }, { id: "four" }],
+        fields: [{ id: "one", name: "One" }, { id: "two", name: "Two" }, { id: "three", name: "Three" }, { id: "four", name: "Four", }],
         rows: [
             { one: "test", two: "blabla", three: 23, four: 512 },
             { one: "test2", two: "bkla", three: 3, four: 214 },
@@ -221,7 +221,7 @@ export default [
     },
     {
         name: "Pivot table - no measures",
-        fields: [{ id: "one" }, { id: "two" }, { id: "three" }, { id: "four" }],
+        fields: [{ id: "one", name: "One" }, { id: "two", name: "Two" }, { id: "three", name: "Three" }, { id: "four", name: "Four", }],
         rows: [
             { one: "test", two: "blabla", three: 23, four: 512 },
             { one: "test2", two: "bkla", three: 3, four: 214 },
@@ -238,7 +238,7 @@ export default [
     },
     {
         name: "Pivot table - no columns, no measures",
-        fields: [{ id: "one" }, { id: "two" }, { id: "three" }],
+        fields: [{ id: "one", name: "One" }, { id: "two", name: "Two" }, { id: "three", name: "Three" }],
         rows: [
             { one: "test", two: "blabla", three: 23 },
             { one: "test2", two: "bkla", three: 3 },
@@ -255,35 +255,35 @@ export default [
     },
     {
         name: "Pivot table - no rows",
-        fields: [{ id: "one" }, { id: "two" }, { id: "three" }],
+        fields: [{ id: "one", name: "One" }, { id: "two", name: "Two" }, { id: "three", name: "Three" }],
         rows: [],
         pivots: ["two"],
         measures: ["three"],
     },
     {
         name: "Pivot table - no rows, no measures",
-        fields: [{ id: "one" }, { id: "two" }, { id: "three" }],
+        fields: [{ id: "one", name: "One" }, { id: "two", name: "Two" }, { id: "three", name: "Three" }],
         rows: [],
         pivots: ["two"],
         measures: [],
     },
     {
         name: "Pivot table - no rows, no measures, no columns",
-        fields: [{ id: "one" }, { id: "two" }, { id: "three" }],
+        fields: [{ id: "one", name: "One" }, { id: "two", name: "Two" }, { id: "three", name: "Three" }],
         rows: [],
         pivots: ["one", "two", "three"],
         measures: [],
     },
     {
         name: "Pivot table - no rows, no columns",
-        fields: [{ id: "one" }, { id: "two" }, { id: "three" }],
+        fields: [{ id: "one", name: "One" }, { id: "two", name: "Two" }, { id: "three", name: "Three" }],
         rows: [],
         pivots: ["one", "two"],
         measures: ["three"],
     },
     {
         name: "Pivot table - no rows, no columns",
-        fields: [{ id: "one" }, { id: "two" }, { id: "three" }, { id: "four" }],
+        fields: [{ id: "one", name: "One" }, { id: "two", name: "Two" }, { id: "three", name: "Three" }, { id: "four", name: "Four", }],
         rows: [],
         pivots: ["one", "two"],
         measures: ["three", "four"],
