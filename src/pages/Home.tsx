@@ -4,7 +4,7 @@ export default () => {
     const fields = [
         { id: 'species', name: 'Species' },
         { id: 'habitat_type', name: 'Habitat Type' },
-        { id: 'total', name: 'Number of Animals' },
+        { id: 'total', name: 'Animals' },
     ];
     const rows = [
         { species: 'African Lion', habitat_type: 'Savanna', total: 20000 },
@@ -25,7 +25,7 @@ export default () => {
     ];
 
     return <div className="page-container">
-        <div style={{ maxWidth: "700px", margin: "auto" }}>
+        <div style={{ maxWidth: "750px", margin: "auto" }}>
             <PivotTable
                 rows={rows}
                 fields={fields}

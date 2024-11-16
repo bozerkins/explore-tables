@@ -14,7 +14,7 @@ export default ({ matrix }: { matrix: PivotTableMatrix }) => {
     const pivotValueMapSize = matrix.pivotValueMap.length;
     const numberOfPivotValuesAdjustedForEmptyRows = !pivotValueMapSize ? 1 : pivotValueMapSize;
     const measuresAdjustedForPivots = Array(numberOfPivotValuesAdjustedForEmptyRows).fill(matrix.measures).flat();
-    console.log("Matrix", matrix)
+
     return (
         <TableContainer>
             <Table>
@@ -23,12 +23,12 @@ export default ({ matrix }: { matrix: PivotTableMatrix }) => {
                     {matrix.pivots.map(pivot => {
                         return <TableRow key={pivot}>
                             {/* Draw pivot titles */}
-                            <PivotTitle title={pivot} colSpan={matrix.columns.length} />
+                            <PivotTitle title={matrix.displayField(pivot)} colSpan={matrix.columns.length} />
                             {/* Draw pivot values (when any pivot is selected) */}
                             {matrix.pivotValueMap.length > 0 &&
                                 matrix.pivotValueMap.map(({ valueMap }, index) => {
                                     const value = valueMap.has(pivot) ? valueMap.get(pivot) : null;
-                                    console.log(valueMap, value)
+
                                     if (value === null) {
                                         return <PivotValue key={index} colSpan={matrix.measures.length} empty />
                                     }
@@ -45,7 +45,7 @@ export default ({ matrix }: { matrix: PivotTableMatrix }) => {
                         {/* Draw column titles */}
                         {matrix.columns.length > 0 &&
                             matrix.columns.map((column, index) => {
-                                return <ColumnTitle key={index} title={column} />
+                                return <ColumnTitle key={index} title={matrix.displayField(column)} />
                             })}
                         {/* Draw special case when no column selected by any pivot selected */}
                         {matrix.columns.length === 0 && matrix.pivots.length > 0 && (
@@ -54,7 +54,7 @@ export default ({ matrix }: { matrix: PivotTableMatrix }) => {
                         {/* Draw measure titles */}
                         {matrix.measures.length > 0 &&
                             measuresAdjustedForPivots.map((measure, index) => {
-                                return <MeasureTitle key={index} title={measure} />
+                                return <MeasureTitle key={index} title={matrix.displayField(measure)} />
                             })}
                         {/* Draw special case when no measures selected by any pivot selected */}
                         {matrix.measures.length === 0 && matrix.pivots.length > 0 && (
