@@ -20,7 +20,7 @@ export default () => {
     ];
     // actual data that is morphed into a pivot
     // note that the dataset should be unique between dimensions + pivots
-    // in case when duplicate records are found - the pivot table throughs an exception
+    // in case when duplicate records are found, the pivot table displays the last value
     const rows = [
         {species: 'African Lion', habitat_type: 'Savanna', total: 20000},
         {species: 'African Elephant', habitat_type: 'Savanna', total: 415000},
