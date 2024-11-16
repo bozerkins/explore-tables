@@ -9,7 +9,7 @@ Can be used for building in-house ad-hoc pages for data analysis.
 ```tsx
 import { PivotTable } from "explore-tables"
 // default theme
-import 'epxlore-tables/themes/default.css'; 
+import 'explore-tables/themes/default.css'; 
 
 export default () => {
     // metadata of our dataset
