@@ -6,7 +6,7 @@ import { PivotTable } from "../../lib/main";
 export default () => {
     const [showOnlyOne, setShowOnlyOne] = useState<number | null>(null);
     return (
-        <div>
+        <div style={{ flexGrow: 1 }}>
             <section>
                 <h1>
                     Pivot table test

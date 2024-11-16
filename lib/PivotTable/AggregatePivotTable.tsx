@@ -1,14 +1,11 @@
 import React from "react";
 import PivotTableMatrix from "./PivotTableMatrix";
-import ColumnTitle from "./TableParts/ColumnTitle";
-import ColumnValue from "./TableParts/ColumnValue";
-import MeasureTitle from "./TableParts/MeasureTitle";
-import PivotTitle from "./TableParts/PivotTitle";
-import PivotValue from "./TableParts/PivotValue";
-import Table from "./TableParts/Table";
-import TableContainer from "./TableParts/TableContainer";
-import TableRow from "./TableParts/TableRow";
-import MeasureValue from "./TableParts/MeasureValue";
+import {
+    TableContainer, Table, TableRow,
+    ColumnTitle, ColumnValue,
+    MeasureTitle, MeasureValue,
+    PivotTitle, PivotValue
+} from "./TableParts/TableParts";
 
 export default ({ matrix }: { matrix: PivotTableMatrix }) => {
     const pivotValueMapSize = matrix.pivotValueMap.length;

@@ -1,8 +1,7 @@
-import ColumnTitle from "./TableParts/ColumnTitle";
-import ColumnValue from "./TableParts/ColumnValue";
-import Table from "./TableParts/Table";
-import TableContainer from "./TableParts/TableContainer";
-import TableRow from "./TableParts/TableRow";
+import {
+    TableContainer, Table, TableRow,
+    ColumnTitle, ColumnValue,
+} from "./TableParts/TableParts";
 
 export interface PlainPivotTableProperties {
     rows: Array<{ [key: string]: any; }>;
