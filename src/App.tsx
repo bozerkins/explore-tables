@@ -4,11 +4,11 @@ import Tests from "./pages/Tests";
 import React from 'react';
 import Interactive from './pages/Interactive';
 import Home from './pages/Home';
+import '../public/themes/default.css';
 
 const App: React.FC = () => {
     return (
         <Router>
-            <link rel="stylesheet" href="themes/default.css" type="text/css" />
             <div className="app">
                 {/* Header */}
                 <header className="header">

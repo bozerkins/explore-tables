@@ -4,11 +4,12 @@ React component for rendering pivot tables. Main purpose of the tables is data a
 
 Can be used for building in-house ad-hoc pages for data analysis.
 
-
 ## Usage
 
 ```tsx
 import { PivotTable } from "explore-tables"
+// default theme
+import 'epxlore-tables/themes/default.css'; 
 
 export default () => {
     // metadata of our dataset
@@ -53,6 +54,8 @@ export default () => {
 }
 ```
 
+Rendering the table would result into 
+![pivot tables example](example.png "Pivot Table")
 
 ## Development
 
@@ -61,12 +64,9 @@ export default () => {
 npm run dev
 ```
 
-
 ## Contributions
 
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
-
-
 
 ## Authors & Contacts
 
