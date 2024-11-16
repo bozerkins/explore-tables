@@ -1,14 +1,15 @@
-import {
-    TableContainer, Table, TableRow,
-    ColumnTitle, ColumnValue,
-} from "./TableParts/TableParts";
+import { TableInterfaceConfig } from "./TableParts/TableInterfaces";
 
 export interface PlainPivotTableProperties {
     rows: Array<{ [key: string]: any; }>;
     fields: Array<{ id: string; name?: string; }>;
+    elements: TableInterfaceConfig;
 }
 
-export default ({ rows, fields }: PlainPivotTableProperties) => {
+export default ({
+    rows, fields, elements
+}: PlainPivotTableProperties) => {
+    const { TableContainer, TableRow, Table, ColumnTitle, ColumnValue } = elements;
     return (
         <TableContainer>
             <Table>

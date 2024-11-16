@@ -1,13 +1,19 @@
 import React from "react";
 import PivotTableMatrix from "./PivotTableMatrix";
-import {
-    TableContainer, Table, TableRow,
-    ColumnTitle, ColumnValue,
-    MeasureTitle, MeasureValue,
-    PivotTitle, PivotValue
-} from "./TableParts/TableParts";
+import { TableInterfaceConfig } from "./TableParts/TableInterfaces";
 
-export default ({ matrix }: { matrix: PivotTableMatrix }) => {
+export interface AggregatePivotTableProperties {
+    matrix: PivotTableMatrix;
+    elements: TableInterfaceConfig;
+}
+
+export default ({ matrix, elements }: AggregatePivotTableProperties) => {
+    const {
+        TableContainer, TableRow, Table,
+        ColumnTitle, ColumnValue,
+        MeasureTitle, MeasureValue,
+        PivotTitle, PivotValue
+    } = elements;
     const pivotValueMapSize = matrix.pivotValueMap.length;
     const numberOfPivotValuesAdjustedForEmptyRows = !pivotValueMapSize ? 1 : pivotValueMapSize;
     const measuresAdjustedForPivots = Array(numberOfPivotValuesAdjustedForEmptyRows).fill(matrix.measures).flat();

@@ -1,4 +1,4 @@
-import { PivotTable } from "./PivotTable/PivotTable"
+import { PivotTable, PivotTableProperties } from "./PivotTable/PivotTable"
 import {
     TableColumnTitleInterface, TableColumnTitleParameters,
     TableColumnValueInterface, TableColumnValueParameters,
@@ -10,6 +10,7 @@ export {
 };
 
 export type {
+    PivotTableProperties,
     TableColumnTitleParameters,
     TableColumnTitleInterface,
     TableColumnValueParameters,

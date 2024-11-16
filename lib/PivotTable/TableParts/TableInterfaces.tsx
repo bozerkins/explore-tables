@@ -21,3 +21,27 @@ export interface TableColumnValueInterface {
 export interface TableElement {
     (params: { children: React.ReactNode }): JSX.Element
 }
+
+export interface TableInterfaceConfig {
+    TableContainer: TableElement;
+    TableRow: TableElement;
+    Table: TableElement;
+    ColumnTitle: TableColumnTitleInterface;
+    ColumnValue: TableColumnValueInterface;
+    PivotTitle: TableColumnTitleInterface;
+    PivotValue: TableColumnValueInterface;
+    MeasureTitle: TableColumnTitleInterface;
+    MeasureValue: TableColumnValueInterface;
+}
+
+export interface TableOverrideConfig {
+    TableContainer?: TableElement;
+    TableRow?: TableElement;
+    Table?: TableElement;
+    ColumnTitle?: TableColumnTitleInterface;
+    ColumnValue?: TableColumnValueInterface;
+    PivotTitle?: TableColumnTitleInterface;
+    PivotValue?: TableColumnValueInterface;
+    MeasureTitle?: TableColumnTitleInterface;
+    MeasureValue?: TableColumnValueInterface;
+}
