@@ -4,7 +4,7 @@ import dts from 'vite-plugin-dts'
 
 // https://vite.dev/config/
 export default defineConfig({
-  base: 'explore-tables',
+  base: '/explore-tables/',
   plugins: [react(), dts({ include: ['src', 'lib'] })],
   build: {
     outDir: 'dist-app',

@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Route, Link, Routes, Navigate } from 'react-router-dom';
+import { Route, Link, Routes, Navigate, HashRouter } from 'react-router-dom';
 import Randomized from "./pages/Randomized";
 import Tests from "./pages/Tests";
 import React from 'react';
@@ -9,7 +9,7 @@ import Styled from './pages/Styled';
 
 const App: React.FC = () => {
     return (
-        <Router basename='explore-tables'>
+        <HashRouter basename="/" future={{ v7_startTransition: true }}>
             <div className="app">
                 {/* Header */}
                 <header className="header">
@@ -44,8 +44,7 @@ const App: React.FC = () => {
                     <p>&copy; 2024 Pivot Table Demo Page</p>
                 </footer>
             </div>
-        </Router >
-
+        </HashRouter>
     );
 };
 
