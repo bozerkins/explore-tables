@@ -1,0 +1,102 @@
+.explore-table-container {
+    --explore-main-color: #3e5488;
+    --explore-second-color: #883e54;
+
+    --explore-main-border-color: color-mix(in srgb, var(--explore-main-color), white 65%);
+    --explore-main-title: color-mix(in srgb, var(--explore-main-color), white 70%);
+    --explore-main-title-blend: color-mix(in srgb, var(--explore-main-color), white 80%);
+    --explore-main-value: color-mix(in srgb, var(--explore-main-color), white 85%);
+    --explore-main-value-blend: color-mix(in srgb, var(--explore-main-color), white 95%);
+
+    --explore-second-border-color: color-mix(in srgb, var(--explore-second-color), white 65%);
+    --explore-second-title: color-mix(in srgb, var(--explore-second-color), white 70%);
+    --explore-second-value: color-mix(in srgb, var(--explore-second-color), white 85%);
+    --explore-second-value-blend: color-mix(in srgb, var(--explore-second-color), white 95%);
+}
+
+.explore-table-container {
+    margin: 20px 0;
+    overflow: auto;
+    font-family: 'Open Sans';
+}
+
+.explore-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 1em;
+    color: #333;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+    background-color: #ffffff;
+}
+
+.explore-table tr td {
+    font-size: 0.8em;
+    padding: 4px 8px;
+    border-bottom: 1px solid;
+}
+
+.explore-table .explore-pivot-title,
+.explore-table .explore-column-title,
+.explore-table .explore-measure-title {
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+.explore-table .explore-column-title,
+.explore-table .explore-column-value {
+    border-left: 1px solid;
+    border-right: 1px solid;
+    border-color: var(--explore-main-border-color);
+}
+
+.explore-table .explore-pivot-title,
+.explore-table .explore-pivot-value {
+    border-left: 1px solid;
+    border-right: 1px solid;
+    border-color: var(--explore-main-border-color);
+}
+
+.explore-table .explore-measure-title,
+.explore-table .explore-measure-value {
+    border-left: 1px solid;
+    border-right: 1px solid;
+    text-align: right;
+    border-color: var(--explore-second-border-color);
+}
+
+.explore-table-row:nth-of-type(2n + 1) .explore-pivot-title {
+    background: var(--explore-main-title);
+}
+
+.explore-table-row:nth-of-type(2n + 1) .explore-pivot-value {
+    background: var(--explore-main-title);
+}
+
+.explore-table-row:nth-of-type(2n) .explore-pivot-title {
+    background: var(--explore-main-value);
+}
+
+.explore-table-row:nth-of-type(2n) .explore-pivot-value {
+    background: var(--explore-main-value);
+}
+
+.explore-column-title {
+    background: var(--explore-main-title-blend);
+}
+
+.explore-measure-title {
+    background: var(--explore-second-value);
+}
+
+.explore-table-row:nth-of-type(2n) .explore-column-value {
+    background: var(--explore-main-value-blend);
+}
+
+.explore-table-row:nth-of-type(2n) .explore-measure-value {
+    background: var(--explore-second-value-blend);
+}
+
+.explore-empty-sign {
+    color: gray;
+    font-weight: normal;
+}
