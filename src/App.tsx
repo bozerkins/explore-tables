@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Route, Link, Routes } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Link, Routes, Navigate } from 'react-router-dom';
 import Randomized from "./pages/Randomized";
 import Tests from "./pages/Tests";
 import React from 'react';
@@ -36,6 +36,7 @@ const App: React.FC = () => {
                     <Route path="/randomized" element={<Randomized />} /> Randomized
                     <Route path="/tests" element={<Tests />} /> Tests
                     <Route path="/interactive" element={<Interactive />} /> Interactive
+                    <Route path="*" element={<Navigate to="/" />} />
                 </Routes>
 
                 {/* Footer */}

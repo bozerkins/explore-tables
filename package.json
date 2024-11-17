@@ -9,11 +9,13 @@
     "dist"
   ],
   "scripts": {
-    "dev": "vite",
-    "build": "tsc --p ./tsconfig-build.json && vite build",
+    "dev": "vite -c vite-app.config.js",
+    "lib-build": "tsc --p ./tsconfig.build.json && vite build -c vite-lib.config.js",
+    "lib-deploy": "echo 'Publishing not implemented yet'",
+    "app-build": "tsc --p ./tsconfig.app.json && vite build -c vite-app.config.js",
+    "app-deploy": "gh-pages -d dist-app",
     "lint": "eslint .",
-    "preview": "vite preview",
-    "prepublishOnly": "npm run build"
+    "preview": "vite preview"
   },
   "peerDependencies": {
     "react": "^18.3.1",
@@ -32,6 +34,7 @@
     "eslint": "^9.13.0",
     "eslint-plugin-react-hooks": "^5.0.0",
     "eslint-plugin-react-refresh": "^0.4.14",
+    "gh-pages": "^6.2.0",
     "globals": "^15.11.0",
     "postcss-normalize": "^13.0.1",
     "react": "^18.3.1",
