@@ -9,7 +9,7 @@ import Styled from './pages/Styled';
 
 const App: React.FC = () => {
     return (
-        <Router>
+        <Router basename='explore-tables'>
             <div className="app">
                 {/* Header */}
                 <header className="header">
