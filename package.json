@@ -7,14 +7,19 @@
   "files": [
     "dist"
   ],
+  "repository": {
+    "type": "git",
+    "url": "https: //github.com/bozerkins/explore-tables"
+  },
   "scripts": {
     "dev": "vite -c vite-app.config.js",
     "lib-build": "tsc --p ./tsconfig.build.json && vite build -c vite-lib.config.js",
-    "lib-deploy": "echo 'Publishing not implemented yet'",
+    "lib-deploy": "npm publish --provenance --access public",
     "app-build": "tsc --p ./tsconfig.app.json && vite build -c vite-app.config.js",
     "app-deploy": "gh-pages -d dist-app",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "build": "npm run lib-build"
   },
   "peerDependencies": {
     "react": "^18.3.1",
