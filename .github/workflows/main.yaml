@@ -20,7 +20,7 @@ jobs:
       - name: Install Node.js
         uses: actions/setup-node@v3
         with:
-          node-version-file: ".nvmrc"
+          node-version: 'v22.1.0'
           cache: pnpm
           registry-url: https://registry.npmjs.org
 
