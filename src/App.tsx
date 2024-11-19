@@ -6,6 +6,7 @@ import Interactive from './pages/Interactive';
 import Home from './pages/Home';
 import '../public/themes/default.css';
 import Styled from './pages/Styled';
+import Sorted from './pages/Sorted';
 
 const App: React.FC = () => {
     return (
@@ -23,6 +24,7 @@ const App: React.FC = () => {
                     <ul className="demoLinks">
                         <li><Link to="/">Home</Link></li>
                         <li><Link to="/styled">Styled</Link></li>
+                        <li><Link to="/sorted">Sorted</Link></li>
                         <li><Link to="/randomized">Randomized</Link></li>
                         <li><Link to="/tests">Tests</Link></li>
                         <li><Link to="/interactive">Interactive</Link></li>
@@ -32,7 +34,8 @@ const App: React.FC = () => {
                 {/* Routes for each Demo */}
                 <Routes>
                     <Route path="/" element={<Home />} /> Home
-                    <Route path="/styled" element={<Styled />} /> Home
+                    <Route path="/styled" element={<Styled />} /> Styled
+                    <Route path="/sorted" element={<Sorted />} /> Sorted
                     <Route path="/randomized" element={<Randomized />} /> Randomized
                     <Route path="/tests" element={<Tests />} /> Tests
                     <Route path="/interactive" element={<Interactive />} /> Interactive

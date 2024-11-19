@@ -1,4 +1,5 @@
 export interface TableColumnTitleParameters {
+    field?: string,
     title?: string,
     colSpan?: number,
     empty?: boolean,
@@ -9,6 +10,7 @@ export interface TableColumnTitleInterface {
 }
 
 export interface TableColumnValueParameters {
+    field?: string,
     value?: string,
     colSpan?: number,
     empty?: boolean,

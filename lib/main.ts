@@ -2,7 +2,8 @@ import { PivotTable, PivotTableProperties } from "./PivotTable/PivotTable"
 import {
     TableColumnTitleInterface, TableColumnTitleParameters,
     TableColumnValueInterface, TableColumnValueParameters,
-    TableElement
+    TableElement,
+    TableOverrideConfig
 } from "./PivotTable/TableParts/TableInterfaces";
 
 export {
@@ -11,6 +12,7 @@ export {
 
 export type {
     PivotTableProperties,
+    TableOverrideConfig,
     TableColumnTitleParameters,
     TableColumnTitleInterface,
     TableColumnValueParameters,

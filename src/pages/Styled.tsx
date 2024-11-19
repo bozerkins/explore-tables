@@ -1,5 +1,4 @@
-import { PivotTable } from "../../lib/main"
-import { TableInterfaceConfig } from "../../lib/PivotTable/TableParts/TableInterfaces";
+import { PivotTable, TableOverrideConfig } from "../../lib/main"
 
 const colors = {
     primary: '#6b9bd1',
@@ -10,7 +9,7 @@ const colors = {
     hoverBackground: '#f0f4f8'
 };
 
-export const styledTableElements: TableInterfaceConfig = {
+export const styledTableElements: TableOverrideConfig = {
     TableContainer: ({ children }) => (
         <div style={{
             padding: '20px',

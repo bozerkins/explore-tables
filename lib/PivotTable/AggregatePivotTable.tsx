@@ -18,6 +18,8 @@ export default ({ matrix, elements }: AggregatePivotTableProperties) => {
     const numberOfPivotValuesAdjustedForEmptyRows = !pivotValueMapSize ? 1 : pivotValueMapSize;
     const measuresAdjustedForPivots = Array(numberOfPivotValuesAdjustedForEmptyRows).fill(matrix.measures).flat();
 
+    console.log(matrix);
+
     return (
         <TableContainer>
             <Table>
@@ -26,20 +28,19 @@ export default ({ matrix, elements }: AggregatePivotTableProperties) => {
                     {matrix.pivots.map(pivot => {
                         return <TableRow key={pivot}>
                             {/* Draw pivot titles */}
-                            <PivotTitle title={matrix.displayField(pivot)} colSpan={matrix.columns.length} />
+                            <PivotTitle field={pivot} title={matrix.displayField(pivot)} colSpan={matrix.columns.length} />
                             {/* Draw pivot values (when any pivot is selected) */}
                             {matrix.pivotValueMap.length > 0 &&
                                 matrix.pivotValueMap.map(({ valueMap }, index) => {
                                     const value = valueMap.has(pivot) ? valueMap.get(pivot) : null;
-
                                     if (value === null) {
-                                        return <PivotValue key={index} colSpan={matrix.measures.length} empty />
+                                        return <PivotValue key={index} field={pivot} colSpan={matrix.measures.length} empty />
                                     }
-                                    return <PivotValue key={index} value={value} colSpan={matrix.measures.length} />;
+                                    return <PivotValue key={index} field={pivot} value={value} colSpan={matrix.measures.length} />;
                                 })}
                             {/* Draw default pivot value (when no pivots selected) */}
                             {matrix.pivotValueMap.length === 0 && (
-                                <PivotValue colSpan={matrix.measures.length} empty />
+                                <PivotValue field={pivot} colSpan={matrix.measures.length} empty />
                             )}
                         </TableRow>
                     })}
@@ -48,7 +49,7 @@ export default ({ matrix, elements }: AggregatePivotTableProperties) => {
                         {/* Draw column titles */}
                         {matrix.columns.length > 0 &&
                             matrix.columns.map((column, index) => {
-                                return <ColumnTitle key={index} title={matrix.displayField(column)} />
+                                return <ColumnTitle key={index} field={column} title={matrix.displayField(column)} />
                             })}
                         {/* Draw special case when no column selected by any pivot selected */}
                         {matrix.columns.length === 0 && matrix.pivots.length > 0 && (
@@ -57,14 +58,14 @@ export default ({ matrix, elements }: AggregatePivotTableProperties) => {
                         {/* Draw measure titles */}
                         {matrix.measures.length > 0 &&
                             measuresAdjustedForPivots.map((measure, index) => {
-                                return <MeasureTitle key={index} title={matrix.displayField(measure)} />
+                                return <MeasureTitle key={index} field={measure} title={matrix.displayField(measure)} />
                             })}
                         {/* Draw special case when no measures selected by any pivot selected */}
                         {matrix.measures.length === 0 && matrix.pivots.length > 0 && (
                             Array(numberOfPivotValuesAdjustedForEmptyRows)
                                 .fill({})
-                                .map((_, index) => {
-                                    return <MeasureTitle key={index} empty />
+                                .map((measure, index) => {
+                                    return <MeasureTitle key={index} field={measure} empty />
                                 }))}
                     </TableRow>
                     {/* Draw rows */}
@@ -74,9 +75,9 @@ export default ({ matrix, elements }: AggregatePivotTableProperties) => {
                             {matrix.columns.map((column, index) => {
                                 const value = columnValueMap.has(column) ? columnValueMap.get(column) : null;
                                 if (value === null) {
-                                    return <ColumnValue key={index} empty />
+                                    return <ColumnValue key={index} field={column} empty />
                                 }
-                                return <ColumnValue key={index} value={value} />
+                                return <ColumnValue key={index} field={column} value={value} />
                             })}
                             {/* Draw special case when no column selected by any pivot selected */}
                             {matrix.columns.length === 0 && matrix.pivots.length > 0 && (
@@ -85,11 +86,13 @@ export default ({ matrix, elements }: AggregatePivotTableProperties) => {
                             {/* Draw measure values */}
                             {children.map(({ measureValueMap }, index) => {
                                 return <React.Fragment key={index}>
-                                    {[...measureValueMap.values()].map((value, index) => {
+                                    {[...measureValueMap.entries()].map(([measure, value], index) => {
                                         if (value === null) {
-                                            return <MeasureValue key={index} empty />
+                                            // TODO: add field 
+                                            return <MeasureValue key={index} field={measure} empty />
                                         }
-                                        return <MeasureValue key={index} value={value} />
+                                        // TODO: add field 
+                                        return <MeasureValue key={index} field={measure} value={value} />
                                     })}
                                     {measureValueMap.size === 0 && (<MeasureValue empty />)}
                                 </React.Fragment>
@@ -99,13 +102,13 @@ export default ({ matrix, elements }: AggregatePivotTableProperties) => {
                     {matrix.valueMapTree.length === 0 && (
                         <TableRow>
                             {/* Draw empty column values */}
-                            {matrix.columns.map((_, index) => <ColumnValue key={index} empty />)}
+                            {matrix.columns.map((column, index) => <ColumnValue key={index} field={column} empty />)}
                             {/* Draw special case when no column selected by any pivot selected */}
                             {matrix.columns.length === 0 && matrix.pivots.length > 0 && (
                                 <ColumnValue empty />
                             )}
                             {/* Draw empty measure values */}
-                            {matrix.measures.map((_, index) => <MeasureValue key={index} empty />)}
+                            {matrix.measures.map((measure, index) => <MeasureValue key={index} field={measure} empty />)}
                             {/* Draw special case when no measures selected */}
                             {matrix.measures.length === 0 && (<MeasureValue empty />)}
                         </TableRow>

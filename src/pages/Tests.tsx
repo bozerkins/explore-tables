@@ -1,6 +1,5 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import tests from "../datasets/Tests";
-import React from "react";
 import { PivotTable } from "../../lib/main";
 
 export default () => {
