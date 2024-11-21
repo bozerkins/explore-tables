@@ -1,6 +1,6 @@
 {
   "name": "explore-tables",
-  "version": "0.0.1",
+  "version": "0.0.0",
   "type": "module",
   "main": "dist/main.js",
   "types": "dist/main.d.ts",

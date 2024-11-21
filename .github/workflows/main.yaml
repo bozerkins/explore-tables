@@ -16,6 +16,7 @@ jobs:
           node-version: 'v22.1.0'
           registry-url: 'https://registry.npmjs.org'
       - run: npm ci
+      - run: npm version ${{ github.ref_name }}
       - run: npm publish --provenance --access public
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
