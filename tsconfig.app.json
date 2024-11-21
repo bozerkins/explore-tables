@@ -21,8 +21,9 @@
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true,
-    "noUncheckedSideEffectImports": true,
-    "composite": true
+    "composite": true,
+    "noEmit": true,
+    "allowImportingTsExtensions": true,
   },
   "include": [
     "src",

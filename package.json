@@ -19,7 +19,8 @@
     "app-deploy": "gh-pages -d dist-app",
     "lint": "eslint .",
     "preview": "vite preview",
-    "build": "npm run lib-build"
+    "build": "npm run lib-build",
+    "prepublishOnly": "npm run build"
   },
   "peerDependencies": {
     "react": "^18.3.1",
