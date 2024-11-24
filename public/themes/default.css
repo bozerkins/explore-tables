@@ -1,6 +1,8 @@
 .explore-table-container {
     --explore-main-color: #3e5488;
     --explore-second-color: #883e54;
+    --explore-color: #333;
+    --explore-background: #ffffff;
 
     --explore-main-border-color: color-mix(in srgb, var(--explore-main-color), white 65%);
     --explore-main-title: color-mix(in srgb, var(--explore-main-color), white 70%);
@@ -23,9 +25,9 @@
     width: 100%;
     border-collapse: collapse;
     font-size: 1em;
-    color: #333;
+    color: var(--explore-color);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
-    background-color: #ffffff;
+    background-color: var(--explore-background);
 }
 
 .explore-table tr td {

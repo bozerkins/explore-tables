@@ -1,0 +1,70 @@
+/* styles/themes.css */
+.theme-selector {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.theme-button {
+    padding: 0.5rem 1rem;
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    background: var(--surface-color);
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: all 0.2s ease;
+}
+
+.theme-button:hover {
+    background: var(--hover-color);
+}
+
+.theme-button.active {
+    background: var(--primary-color);
+    color: white;
+    border-color: var(--primary-color);
+}
+
+.result-container {
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+/* Theme-specific containers to ensure proper theme isolation */
+.theme-default {
+    background: var(--et-background);
+}
+
+.theme-dark {
+    background: var(--et-background);
+}
+
+.theme-blue {
+    background: var(--et-background);
+}
+
+.theme-green {
+    background: var(--et-background);
+}
+
+.theme-purple {
+    background: var(--et-background);
+}
+
+.theme-usage-list {
+    list-style: none;
+    padding: 0;
+    margin: 1rem 0;
+}
+
+.theme-usage-list li {
+    margin-bottom: 0.75rem;
+    line-height: 1.5;
+}
+
+.theme-usage-list code {
+    background: var(--code-background);
+    padding: 0.2rem 0.4rem;
+    border-radius: 4px;
+    font-size: 0.9em;
+}

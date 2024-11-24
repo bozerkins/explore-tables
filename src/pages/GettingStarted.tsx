@@ -166,8 +166,8 @@ const data = [
 
                 {/* Next Section Link */}
                 <div className="next-section">
-                    <Link to="/styled">
-                        Next: Styled tables →
+                    <Link to="/themes">
+                        Next: Themes →
                     </Link>
                 </div>
             </div>

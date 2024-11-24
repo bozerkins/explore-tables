@@ -1,3 +1,4 @@
+import React from "react";
 import { PivotTable, TableOverrideConfig } from "../../lib/main"
 
 const colors = {
