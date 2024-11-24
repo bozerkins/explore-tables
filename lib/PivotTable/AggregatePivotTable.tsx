@@ -18,8 +18,6 @@ export default ({ matrix, elements }: AggregatePivotTableProperties) => {
     const numberOfPivotValuesAdjustedForEmptyRows = !pivotValueMapSize ? 1 : pivotValueMapSize;
     const measuresAdjustedForPivots = Array(numberOfPivotValuesAdjustedForEmptyRows).fill(matrix.measures).flat();
 
-    console.log(matrix);
-
     return (
         <TableContainer>
             <Table>

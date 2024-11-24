@@ -47,9 +47,10 @@ class PivotTableMatrix {
      */
     static createFromPayload(payload: PivotTableMatrixPayload, config: PivotConfig): PivotTableMatrix {
         const fields = payload.fields.map((field) => field.id);
-        const measures = fields.filter((field) => config.measures.includes(field));
-        const columns = fields.filter((field) => config.dimensions.includes(field));
-        const pivots = fields.filter((field) => config.pivots.includes(field));
+        const measures = config.measures.filter(measure => fields.includes(measure));
+        const columns = config.dimensions.filter(dimension => fields.includes(dimension));
+        const pivots = config.pivots.filter(pivot => fields.includes(pivot));
+
         const pivotValueMaps = createValueMaps(payload.rows, pivots);
         const columnValueMaps = createValueMaps(payload.rows, columns);
         const valueMapTree = createDataTree(payload.rows, columns, columnValueMaps, pivots, pivotValueMaps, measures);
