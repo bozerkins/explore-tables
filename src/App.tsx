@@ -1,19 +1,30 @@
 /* App.tsx */
-import { Route, Link, Routes, Navigate, HashRouter } from 'react-router-dom';
+import { Route, Link, Routes, Navigate, HashRouter, useLocation } from 'react-router-dom';
 import './App.css';
 import '../public/themes/default.css';
 import Randomized from "./pages/Randomized";
 import Tests from "./pages/Tests";
-import React from 'react';
+import React, { useEffect } from 'react';
 import Interactive from './pages/Interactive';
 import Sorted from './pages/Sorted';
 import GettingStarted from './pages/GettingStarted';
 import Themes from './pages/Themes';
 import Styled from './pages/Styled';
 
+function ScrollToTop() {
+    const { pathname } = useLocation();
+
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, [pathname]);
+
+    return null;
+}
+
 const App: React.FC = () => {
     return (
         <HashRouter basename="/" future={{ v7_startTransition: true }}>
+            <ScrollToTop />
             <div className="app">
                 {/* Header */}
                 <header className="header">
