@@ -11,7 +11,12 @@ export default ({
     rows, fields, elements, dimensions = []
 }: PlainPivotTableProperties) => {
     const { TableContainer, TableRow, Table, ColumnTitle, ColumnValue } = elements;
-    const filteredFields = dimensions.length > 0 ? fields.filter(field => dimensions.includes(field.id)) : fields;
+    const filteredFields = dimensions.length > 0
+        ? dimensions
+            .map(dimension => fields.find(field => field.id === dimension))
+            .filter((field): field is NonNullable<typeof field> => field !== undefined)
+        : fields;
+
     return (
         <TableContainer>
             <Table>
