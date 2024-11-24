@@ -16,22 +16,29 @@ const App: React.FC = () => {
             <div className="app">
                 {/* Header */}
                 <header className="header">
-                    <h1>Explore Table - Live Demo</h1>
+                    <div className="header-left">
+                        <h1>Explore Tables</h1>
+                    </div>
+                    <nav className="header-nav">
+                        <ul className="nav-links">
+                            <li><Link to="/">Home</Link></li>
+                            <li><Link to="/styled">Styled</Link></li>
+                            <li><Link to="/sorted">Sorted</Link></li>
+                            <li><Link to="/randomized">Randomized</Link></li>
+                            <li><Link to="/tests">Tests</Link></li>
+                            <li><Link to="/interactive">Interactive</Link></li>
+                        </ul>
+                    </nav>
+                    <a
+                        href="https://github.com/bozerkins/explore-tables"
+                        className="github-link"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label="View source on GitHub"
+                    >
+                        <i className="fab fa-github"></i>
+                    </a>
                 </header>
-
-                {/* Main Content Area with Links to Demos */}
-                <main className="mainContent">
-                    <h2 style={{ paddingBottom: "15px" }}>Explore Tables</h2>
-                    <p style={{ paddingBottom: "20px" }}>Pivot tables made easy. Select a demo to view different pivot table functionalities:</p>
-                    <ul className="demoLinks">
-                        <li><Link to="/">Home</Link></li>
-                        <li><Link to="/styled">Styled</Link></li>
-                        <li><Link to="/sorted">Sorted</Link></li>
-                        <li><Link to="/randomized">Randomized</Link></li>
-                        <li><Link to="/tests">Tests</Link></li>
-                        <li><Link to="/interactive">Interactive</Link></li>
-                    </ul>
-                </main>
 
                 {/* Routes for each Demo */}
                 <Routes>
