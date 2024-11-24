@@ -9,6 +9,7 @@ import Interactive from './pages/Interactive';
 import Home from './pages/Home';
 import Styled from './pages/Styled';
 import Sorted from './pages/Sorted';
+import GettingStarted from './pages/GettingStarted';
 
 const App: React.FC = () => {
     return (
@@ -21,7 +22,7 @@ const App: React.FC = () => {
                     </div>
                     <nav className="header-nav">
                         <ul className="nav-links">
-                            <li><Link to="/">Home</Link></li>
+                            <li><Link to="/">Getting Started</Link></li>
                             <li><Link to="/styled">Styled</Link></li>
                             <li><Link to="/sorted">Sorted</Link></li>
                             <li><Link to="/randomized">Randomized</Link></li>
@@ -42,7 +43,7 @@ const App: React.FC = () => {
 
                 {/* Routes for each Demo */}
                 <Routes>
-                    <Route path="/" element={<Home />} /> Home
+                    <Route path="/" element={<GettingStarted />} /> Getting Started
                     <Route path="/styled" element={<Styled />} /> Styled
                     <Route path="/sorted" element={<Sorted />} /> Sorted
                     <Route path="/randomized" element={<Randomized />} /> Randomized

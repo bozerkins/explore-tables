@@ -12,14 +12,14 @@ interface CodeBlockProps {
 
 const CodeBlock: React.FC<CodeBlockProps> = ({ code, language = 'typescript' }) => {
     const [copied, setCopied] = useState(false);
-
+    const trimmedCode = code.trim();
     useEffect(() => {
         Prism.highlightAll();
-    }, [code]);
+    }, [trimmedCode]);
 
     const copyToClipboard = async () => {
         try {
-            await navigator.clipboard.writeText(code);
+            await navigator.clipboard.writeText(trimmedCode);
             setCopied(true);
             setTimeout(() => setCopied(false), 2000);
         } catch (err) {
@@ -38,7 +38,7 @@ const CodeBlock: React.FC<CodeBlockProps> = ({ code, language = 'typescript' }) 
             </button>
             <pre className="code-container">
                 <code className={`language-${language}`}>
-                    {code}
+                    {trimmedCode}
                 </code>
             </pre>
         </div>

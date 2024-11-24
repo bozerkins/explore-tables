@@ -1,3 +1,4 @@
+import React from "react";
 import PivotTableMatrix from "./PivotTableMatrix";
 import AggregatePivotTable from "./AggregatePivotTable";
 import PlainPivotTable from "./PlainPivotTable";
@@ -7,7 +8,7 @@ import {
     ColumnTitle, ColumnValue,
     PivotTitle, PivotValue,
     MeasureTitle, MeasureValue
-} from "./TableParts/TableParts"
+} from "./TableParts/TableParts";
 
 export const emptySign = "∅";
 
