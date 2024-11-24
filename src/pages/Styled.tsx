@@ -24,7 +24,7 @@ export default () => {
 
     return (
         <PageTemplate
-            title="Custom Elements"
+            title="Styled"
             description="Learn how to customize the appearance of your pivot table using element overrides."
         >
             <div className="content-sections">
