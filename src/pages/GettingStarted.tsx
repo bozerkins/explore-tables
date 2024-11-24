@@ -16,10 +16,27 @@ const GettingStarted = () => {
 
     return (
         <PageTemplate
-            title="Getting Started with Pivot Tables"
+            title="Getting Started"
             description="Learn how to use pivot tables step by step, from basic usage to advanced features."
         >
             <div className="content-sections">
+                {/* Installation Section */}
+                <section className="content-section">
+                    <h3>Installation</h3>
+                    <p>
+                        Start by installing the package using npm. The package provides all the necessary components
+                        for creating interactive pivot tables in your React application.
+                    </p>
+                    <div className="example-container">
+                        <CodeBlock code={`npm install explore-tables`} />
+                    </div>
+                    <p>
+                        After installation, you can import the PivotTable component in your React components:
+                    </p>
+                    <div className="example-container">
+                        <CodeBlock code={`import { PivotTable } from 'explore-tables';`} />
+                    </div>
+                </section>
                 {/* Basic Usage Section - stays the same except remove h4 Result */}
                 <section className="content-section">
                     <h3>Basic Table Structure</h3>
