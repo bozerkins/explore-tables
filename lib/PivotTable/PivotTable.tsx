@@ -38,7 +38,7 @@ export const PivotTable = ({
     const isPlainTable = measures.length === 0 && pivots.length === 0;
     if (isPlainTable) {
         // create simple pivot-styled table
-        return <PlainPivotTable rows={rows} fields={fields} elements={mergedElements} />
+        return <PlainPivotTable rows={rows} fields={fields} dimensions={dimensions} elements={mergedElements} />
     }
 
     // create a matrix from the provided data

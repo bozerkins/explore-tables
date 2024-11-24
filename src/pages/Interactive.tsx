@@ -166,6 +166,30 @@ export default () => {
                                     })}
                                 </div>
                             </div>
+
+                            <div className="field-section">
+                                <h3>Selected Measures</h3>
+                                <div className="draggable-container" id="selected-measures">
+                                    {selectedMeasures.map((measureId, index) => {
+                                        const measure = measures.find(m => m.id === measureId)!;
+                                        return (
+                                            <DraggableItem
+                                                key={measure.id}
+                                                id={measure.id}
+                                                index={index}
+                                                type="measure"
+                                                moveItem={(dragIndex, hoverIndex) =>
+                                                    moveItem('selected-measures', dragIndex, hoverIndex)}
+                                            >
+                                                {measure.name}
+                                            </DraggableItem>
+                                        );
+                                    })}
+                                </div>
+                            </div>
+
+
+
                         </div>
 
                         <div className="pivot-table-container">
