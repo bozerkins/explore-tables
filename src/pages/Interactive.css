@@ -1,28 +1,44 @@
 /* src/pages/Interactive.css */
+.app>.interactive-wrapper {
+    margin: 3rem 0;
+}
+
+.interactive-wrapper .info-section {
+    margin-bottom: 3rem;
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.05);
+}
+
 .interactive-layout {
     display: flex;
-    height: calc(100vh - 300px);
+    max-height: 100vh;
     flex-direction: row;
     margin: 0;
+    overflow: hidden;
 }
 
 .interactive-sidebar {
-    width: 400px;
+    max-width: 400px;
     background: #ffffff;
+    border-radius: 12px;
     border-right: 1px solid #e0e0e0;
-    padding: 2rem 3rem;
+    padding: 1rem;
     overflow-y: auto;
+    height: fit-content;
+    /* Add this to make it fit content */
 }
 
 .interactive-content {
     flex: 1;
-    padding: 2rem 3rem;
+    padding: 0;
+    padding-left: 1rem;
     overflow-y: auto;
     background: #f8f9fa;
 }
 
 .sidebar-section {
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
 }
 
 .sidebar-section h3 {
@@ -35,14 +51,14 @@
 .field-list {
     display: flex;
     flex-direction: column;
-    gap: 0.75rem;
+    gap: 0.5rem;
 }
 
 .field-item {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 0.75rem 1rem;
+    padding: 0.5rem 0.75rem;
     background: #ffffff;
     border-radius: 8px;
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
@@ -90,29 +106,67 @@
 }
 
 .selected-fields {
-    margin-bottom: 2rem;
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1rem;
 }
 
 .field-section {
-    margin-bottom: 1.5rem;
+    margin-bottom: 1rem;
 }
 
 .field-section h3 {
     color: #3e5488;
-    font-size: 1.25rem;
-    margin-bottom: 1rem;
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
     font-weight: 600;
 }
 
+.selected-fields .field-section {
+    flex: 1;
+    min-width: 0;
+    margin-bottom: 0;
+}
+
+.selected-fields .draggable-container {
+    height: 120px;
+    overflow-y: auto;
+    padding: 0.5rem;
+    margin: 0;
+    border: 1px solid #e0e0e0;
+    border-radius: 4px;
+    background: #f8f8f8;
+}
+
+.selected-fields .field-section h3 {
+    font-size: 0.9rem;
+    margin-bottom: 0.4rem;
+    color: #666;
+}
+
+.selected-fields .draggable-container .field-item {
+    padding: 0.35rem 0.5rem;
+    font-size: 0.9rem;
+}
+
+.selected-fields .draggable-container::-webkit-scrollbar {
+    width: 6px;
+}
+
+.selected-fields .draggable-container::-webkit-scrollbar-thumb {
+    background-color: #ddd;
+    border-radius: 3px;
+}
+
 .draggable-container {
-    min-height: 50px;
-    padding: 1rem;
+    padding: 0.75rem;
+    gap: 0.4rem;
+    min-height: 40px;
     background: #ffffff;
     border-radius: 8px;
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
     display: flex;
     flex-wrap: wrap;
-    gap: 0.5rem;
 }
 
 .pivot-table-container {
@@ -147,7 +201,6 @@
     align-items: center;
     padding: 1.5rem 3rem;
     cursor: pointer;
-    border-bottom: 1px solid #e0e0e0;
 }
 
 .info-header h2 {
@@ -159,6 +212,7 @@
 }
 
 .info-content {
+    border-top: 1px solid #e0e0e0;
     padding: 2rem 3rem;
 }
 
@@ -224,27 +278,64 @@
     color: #2c3e50;
 }
 
-/* In Interactive.css */
-
-/* Target the specific route/component */
-.app>.interactive-wrapper {
-    margin: 3rem 0;
-    /* Match the app padding from App.css */
+.draggable-container {
+    padding: 0.5rem;
+    gap: 0.4rem;
+    min-height: 32px;
+    background: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-wrap: wrap;
 }
 
-.interactive-wrapper .info-section {
-    margin-bottom: 3rem;
-    /* Space between info section and interactive layout */
-    background: #ffffff;
-    border-radius: 12px;
-    /* Restore border radius since we have margins now */
-    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.05);
+.selected-fields {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    /* Three equal columns */
+    gap: 1rem;
+    margin-bottom: 1rem;
 }
 
-.interactive-wrapper .interactive-layout {
-    background: #ffffff;
-    border-radius: 12px;
-    /* Add border radius to match info section */
-    overflow: hidden;
-    /* Ensure content doesn't overflow rounded corners */
+.selected-fields .field-section {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    margin-bottom: 0;
+}
+
+.selected-fields .field-section h3 {
+    font-size: 0.9rem;
+    margin-bottom: 0.4rem;
+    color: #666;
+}
+
+.selected-fields .draggable-container {
+    flex: 1;
+    /* Make container fill available space */
+    min-height: 80px;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    padding: 0.5rem;
+    margin: 0;
+    border: 1px solid #e0e0e0;
+    border-radius: 4px;
+    background: #f8f8f8;
+}
+
+.field-item {
+    padding: 0.35rem 0.5rem;
+    min-height: 24px;
+    display: flex;
+    align-items: center;
+}
+
+.selected-fields .draggable-container .field-item {
+    margin-bottom: 0.25rem;
+    font-size: 0.9rem;
+}
+
+.selected-fields .draggable-container .field-item:last-child {
+    margin-bottom: 0;
 }
