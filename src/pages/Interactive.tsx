@@ -32,7 +32,7 @@ export default () => {
                     className="info-header"
                     onClick={() => setIsInfoVisible(!isInfoVisible)}
                 >
-                    <h2>About This Demo</h2>
+                    <h2>Interactive Demo</h2>
                     <button className={`collapse-button ${isInfoVisible ? 'expanded' : ''}`}>
                         <i className={`fa ${isInfoVisible ? 'fa-chevron-up' : 'fa-chevron-down'}`}></i>
                     </button>
@@ -40,10 +40,12 @@ export default () => {
 
                 {isInfoVisible && (
                     <div className="info-content">
-                        <h3>Dataset: Fuel Consumption</h3>
+                        <h3>Dataset: Fuel Consumption Ratings 1995-2004 </h3>
                         <p>
                             This demo uses a dataset containing vehicle fuel consumption ratings.
-                            The data includes various vehicle characteristics and their fuel efficiency metrics.
+                            The data includes various vehicle characteristics and their fuel efficiency metrics.<br />
+
+                            Source: <a href="https://open.canada.ca/data/en/dataset/98f1a129-f628-4ce4-b24d-6f16bf24dd64/resource/42495676-28b7-40f3-b0e0-3d7fe005ca56">open.canada.ca</a>
                         </p>
 
                         <h3>How to Use</h3>

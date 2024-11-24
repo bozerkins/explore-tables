@@ -23,6 +23,18 @@ export interface Measure {
     field?: string;
 }
 
+function formatNumber(value: unknown): string {
+    // First check if it's a valid number
+    if (typeof value !== 'number' || isNaN(value)) {
+        return '';
+    }
+
+    return new Intl.NumberFormat('en-US', {
+        minimumFractionDigits: Number.isInteger(value) ? 0 : 2,
+        maximumFractionDigits: Number.isInteger(value) ? 0 : 2
+    }).format(value);
+}
+
 
 export class DataAggregator {
     private data: DataRow[];
@@ -91,7 +103,7 @@ export class DataAggregator {
             // Calculate aggregations for measures
             config.measures.forEach(measure => {
                 const values = groupedRow[`${measure.field}_values`];
-                resultRow[measure.field] = this.calculateAggregation(values, measure.type);
+                resultRow[measure.field] = formatNumber(this.calculateAggregation(values, measure.type));
                 delete groupedRow[`${measure.field}_values`];
             });
 

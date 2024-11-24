@@ -4,9 +4,9 @@ import { Dimension, Measure, DataAggregator } from '../datasets/DataAggregator';
 import { dataset, model } from '../datasets/FuelConsumption';
 
 export const useInteractiveTable = () => {
-    const [selectedDimensions, setSelectedDimensions] = useState<string[]>([]);
+    const [selectedDimensions, setSelectedDimensions] = useState<string[]>([model.dimensions[0].id, model.dimensions[1].id]);
     const [selectedMeasures, setSelectedMeasures] = useState<string[]>([model.measures[0].id]);
-    const [pivotedDimensions, setPivotedDimensions] = useState<string[]>([]);
+    const [pivotedDimensions, setPivotedDimensions] = useState<string[]>([model.dimensions[0].id]);
     const [aggregatedData, setAggregatedData] = useState<any[] | null>(null);
 
     const toggleDimension = (dimension: Dimension) => {
