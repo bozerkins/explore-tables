@@ -1,0 +1,29 @@
+/* themes/night.css */
+.explore-table-container {
+    /* Base colors - darker shades but still visible */
+    --explore-main-color: #4a5a8c;
+    /* Muted dark blue */
+    --explore-second-color: #8c4a5a;
+    /* Muted dark red */
+    --explore-color: #e0e0e0;
+    /* Light gray text */
+    --explore-background: #1a1a1a;
+    /* Very dark gray background */
+
+    /* Custom color-mix values for dark theme */
+    --explore-main-border-color: color-mix(in srgb, var(--explore-main-color), var(--explore-background) 35%);
+    --explore-main-title: color-mix(in srgb, var(--explore-main-color), var(--explore-background) 30%);
+    --explore-main-title-blend: color-mix(in srgb, var(--explore-main-color), var(--explore-background) 20%);
+    --explore-main-value: color-mix(in srgb, var(--explore-main-color), var(--explore-background) 15%);
+    --explore-main-value-blend: color-mix(in srgb, var(--explore-main-color), var(--explore-background) 5%);
+
+    --explore-second-border-color: color-mix(in srgb, var(--explore-second-color), var(--explore-background) 35%);
+    --explore-second-title: color-mix(in srgb, var(--explore-second-color), var(--explore-background) 30%);
+    --explore-second-value: color-mix(in srgb, var(--explore-second-color), var(--explore-background) 15%);
+    --explore-second-value-blend: color-mix(in srgb, var(--explore-second-color), var(--explore-background) 5%);
+}
+
+/* Optional: Override empty sign color for better visibility in dark theme */
+.explore-table-container .explore-empty-sign {
+    color: #e0e0e0d1;
+}

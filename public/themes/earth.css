@@ -1,0 +1,7 @@
+/* themes/earth.css */
+.explore-table-container {
+    --explore-main-color: #8b6f4e;
+    --explore-second-color: #4e8b6f;
+    --explore-color: #333;
+    --explore-background: #fffcf7;
+}

@@ -1,28 +1,28 @@
 // pages/Themes.tsx
+import "./Themes.css"
+import '../../public/themes/default.css';
 import React, { useState } from 'react';
 import { PivotTable } from 'explore-tables';
 import PageTemplate from '../components/PageTemplate';
 import CodeBlock from '../components/CodeBlock';
-import "./Themes.css"
-
-// Import all themes (these would be your actual theme imports)
-import '../../public/themes/default.css';
 import { Link } from 'react-router-dom';
-// import '../../public/themes/dark.css';
-// import '../../public/themes/blue.css';
-// import '../../public/themes/green.css';
-// import '../../public/themes/purple.css';
 
 const Themes = () => {
     const [activeTheme, setActiveTheme] = useState('default');
 
     const themes = [
         { id: 'default', name: 'Default' },
-        { id: 'dark', name: 'Dark' },
-        { id: 'blue', name: 'Blue' },
-        { id: 'green', name: 'Green' },
-        { id: 'purple', name: 'Purple' }
+        { id: 'night', name: 'Night' },
+        { id: 'ocean', name: 'Ocean' },
+        { id: 'forest', name: 'Forest' },
+        { id: 'sunset', name: 'Sunset' },
+        { id: 'royal', name: 'Royal' },
+        { id: 'mint', name: 'Mint' },
+        { id: 'berry', name: 'Berry' },
+        { id: 'sky', name: 'Sky' },
+        { id: 'earth', name: 'Earth' }
     ];
+
 
     // Sample data for the table
     const fields = [
@@ -141,6 +141,10 @@ import './my-custom-theme.css';`} />
                         <li><code>--explore-color</code>: Defines the main text color throughout the table</li>
                         <li><code>--explore-background</code>: Sets the base background color of the table</li>
                     </ul>
+
+                    <p>
+                        Explore the <strong>default.css</strong> styles for more override options or continue to the next section to create override table elements for custom styling.
+                    </p>
                 </section>
 
                 {/* Next Section Link */}
