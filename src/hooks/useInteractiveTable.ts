@@ -94,7 +94,8 @@ export const useInteractiveTable = () => {
                 .filter(measure => selectedMeasures.includes(measure.id))
                 .map(measure => ({
                     field: measure.id,
-                    type: measure.aggregate
+                    type: measure.aggregate,
+                    aggregate_over: measure.field,
                 })),
         });
         setAggregatedData(result);

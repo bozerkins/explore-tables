@@ -6,6 +6,7 @@ export interface AggregationConfig {
     measures: Array<{
         field: string;
         type: AggregationType;
+        aggregate_over?: string;
     }>;
 }
 
@@ -19,6 +20,7 @@ export interface Measure {
     id: string;
     name: string;
     aggregate: AggregationType;
+    field?: string;
 }
 
 
@@ -73,7 +75,7 @@ export class DataAggregator {
             // Collect values for measures
             config.measures.forEach(measure => {
                 const currentRow = groupedData.get(groupKey)!;
-                currentRow[`${measure.field}_values`].push(row[measure.field]);
+                currentRow[`${measure.field}_values`].push(measure.aggregate_over ? Number(row[measure.aggregate_over]) : 1);
             });
         });
 

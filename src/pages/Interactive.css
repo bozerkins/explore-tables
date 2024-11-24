@@ -19,7 +19,7 @@
 }
 
 .interactive-sidebar {
-    max-width: 400px;
+    width: 400px;
     background: #ffffff;
     border-radius: 12px;
     border-right: 1px solid #e0e0e0;
