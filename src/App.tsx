@@ -2,7 +2,6 @@
 import { Route, Link, Routes, Navigate, HashRouter, useLocation } from 'react-router-dom';
 import './App.css';
 import '../public/themes/default.css';
-import Randomized from "./pages/Randomized";
 import Tests from "./pages/Tests";
 import React, { useEffect } from 'react';
 import Interactive from './pages/Interactive';
@@ -39,9 +38,8 @@ const App: React.FC = () => {
                             <li><Link to="/themes">Themes</Link></li>
                             <li><Link to="/styled">Styled</Link></li>
                             <li><Link to="/sorted">Sorted</Link></li>
-                            <li><Link to="/randomized">Randomized</Link></li>
-                            <li><Link to="/tests">Tests</Link></li>
                             <li><Link to="/interactive">Interactive</Link></li>
+                            <li><Link to="/tests">Tests</Link></li>
                         </ul>
                     </nav>
                     <a
@@ -61,7 +59,6 @@ const App: React.FC = () => {
                     <Route path="/themes" element={<Themes />} /> Themes
                     <Route path="/styled" element={<Styled />} /> Styled
                     <Route path="/sorted" element={<Sorted />} /> Sorted
-                    <Route path="/randomized" element={<Randomized />} /> Randomized
                     <Route path="/tests" element={<Tests />} /> Tests
                     <Route path="/interactive" element={<Interactive />} /> Interactive
                     <Route path="*" element={<Navigate to="/" />} />

@@ -1,0 +1,98 @@
+.test-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+}
+
+.toggle-button {
+    background: var(--primary-color);
+    color: var(--text-secondary);
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: background-color 0.2s ease;
+}
+
+.toggle-button:hover {
+    background: var(--secondary-color);
+}
+
+.test-config {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.config-item h6 {
+    color: var(--primary-color);
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+}
+
+.test-description {
+    margin-bottom: 3rem;
+    padding: 2rem;
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.05);
+}
+
+.test-description h2 {
+    color: #3e5488;
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+}
+
+.test-description h3 {
+    color: #3e5488;
+    font-size: 1.5rem;
+    margin: 1.5rem 0 1rem;
+    font-weight: 600;
+}
+
+.test-description p {
+    color: #2c3e50;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+}
+
+.test-description ul {
+    list-style-type: disc;
+    margin: 0 0 1.5rem 0;
+    padding-left: 2rem;
+}
+
+.test-description ul ul {
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.test-description li {
+    margin-bottom: 0.5rem;
+    color: #2c3e50;
+    line-height: 1.6;
+}
+
+.test-description strong {
+    font-weight: 600;
+}
+
+.usage-note {
+    margin-top: 2rem;
+    padding: 1.25rem 2rem;
+    background: #eef2f7;
+    border-radius: 8px;
+    line-height: 1.6;
+}
+
+.usage-note strong {
+    color: #3e5488;
+}

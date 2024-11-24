@@ -3,6 +3,7 @@ import { PivotTable, TableOverrideConfig, } from "../../lib/main"
 import { DatasetSorter, SortParameter } from "../datasets/DataSorter";
 import PageTemplate from "../components/PageTemplate";
 import CodeBlock from "../components/CodeBlock";
+import { Link } from "react-router-dom";
 
 const fields = [
     { id: 'species', name: 'Species' },
@@ -272,6 +273,12 @@ const handleSort = (field, event) => {
                     </ol>
                 </section>
 
+                {/* Next Section Link */}
+                <div className="next-section">
+                    <Link to="/interactive">
+                        Next: Interactive Demo →
+                    </Link>
+                </div>
             </div>
         </PageTemplate>
     );
