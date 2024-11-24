@@ -1,0 +1,7 @@
+/* themes/mint.css */
+.explore-table-container {
+    --explore-main-color: #40b792;
+    --explore-second-color: #b74066;
+    --explore-color: #333;
+    --explore-background: #f7fffc;
+}

@@ -1,0 +1,7 @@
+/* themes/sky.css */
+.explore-table-container {
+    --explore-main-color: #49b6ff;
+    --explore-second-color: #ff49b6;
+    --explore-color: #333;
+    --explore-background: #f7fbff;
+}

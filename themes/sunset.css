@@ -1,0 +1,7 @@
+/* themes/sunset.css */
+.explore-table-container {
+    --explore-main-color: #ff6b35;
+    --explore-second-color: #35a7ff;
+    --explore-color: #333;
+    --explore-background: #fff9f7;
+}
