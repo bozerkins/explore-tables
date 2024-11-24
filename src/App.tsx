@@ -6,11 +6,10 @@ import Randomized from "./pages/Randomized";
 import Tests from "./pages/Tests";
 import React from 'react';
 import Interactive from './pages/Interactive';
-import Home from './pages/Home';
-import Styled from './pages/Styled';
 import Sorted from './pages/Sorted';
 import GettingStarted from './pages/GettingStarted';
 import Themes from './pages/Themes';
+import Styled from './pages/Styled';
 
 const App: React.FC = () => {
     return (

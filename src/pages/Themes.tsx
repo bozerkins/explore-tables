@@ -149,7 +149,7 @@ import './my-custom-theme.css';`} />
 
                 {/* Next Section Link */}
                 <div className="next-section">
-                    <Link to="/Styled">
+                    <Link to="/styled">
                         Next: Custom Styles →
                     </Link>
                 </div>
