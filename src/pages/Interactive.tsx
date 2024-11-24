@@ -1,294 +1,131 @@
-import React, { useState, useCallback, useEffect } from 'react';
-import { DndProvider, useDrag, useDrop } from 'react-dnd';
+// src/pages/Interactive.tsx
+import { DndProvider } from 'react-dnd';
 import { HTML5Backend } from 'react-dnd-html5-backend';
-import { dataset, model } from '../datasets/FuelConsumption';
-import { DataAggregator, Dimension, Measure } from '../datasets/DataAggregator';
+import { model } from '../datasets/FuelConsumption';
 import { PivotTable } from '../../lib/main';
+import { DraggableItem } from '../components/DraggableItem';
+import { useInteractiveTable } from '../hooks/useInteractiveTable';
+import './Interactive.css';
+import { useState } from 'react';
 
-const dimensions: Dimension[] = model.dimensions;
-const measures: Measure[] = model.measures;
+const dimensions = model.dimensions;
+const measures = model.measures;
 const fields = new Array().concat(dimensions).concat(measures);
 
-const DraggableItem = ({ id, index, type, children, moveItem }: {
-    id: string;
-    index: number;
-    type: 'dimension' | 'pivoted' | 'measure';
-    children: React.ReactNode;
-    moveItem: (dragIndex: number, hoverIndex: number) => void;
-}) => {
-    const [{ isDragging }, drag] = useDrag({
-        type,
-        item: { id, index },
-        collect: (monitor) => ({
-            isDragging: monitor.isDragging(),
-        }),
-    });
-
-    const [, drop] = useDrop({
-        accept: type,
-        hover: (item: { id: string; index: number }) => {
-            if (!item) return;
-
-            const dragIndex = item.index;
-            const hoverIndex = index;
-
-            if (dragIndex === hoverIndex) return;
-
-            moveItem(dragIndex, hoverIndex);
-            item.index = hoverIndex;
-        },
-    });
-
-    return (
-        <div
-            ref={(node) => drag(drop(node))}
-            style={{
-                padding: '6px 12px',
-                backgroundColor: type === 'measure' ? '#ffe0e0' :
-                    type === 'pivoted' ? '#bbdefb' : '#e0e0e0',
-                borderRadius: '16px',
-                fontSize: '14px',
-                cursor: 'grab',
-                userSelect: 'none',
-                display: 'inline-flex',
-                alignItems: 'center',
-                margin: '4px',
-                opacity: isDragging ? 0.5 : 1,
-            }}
-        >
-            {children}
-        </div>
-    );
-};
-
 export default () => {
-    const [selectedDimensions, setSelectedDimensions] = useState<string[]>([]);
-    const [selectedMeasures, setSelectedMeasures] = useState<string[]>([measures[0].id]);
-    const [pivotedDimensions, setPivotedDimensions] = useState<string[]>([]);
-    const [aggregatedData, setAggregatedData] = useState<any[] | null>(null);
+    const [isInfoVisible, setIsInfoVisible] = useState(true);
+    const {
+        selectedDimensions,
+        selectedMeasures,
+        pivotedDimensions,
+        aggregatedData,
+        toggleDimension,
+        toggleMeasure,
+        togglePivot,
+        moveItem,
+    } = useInteractiveTable();
 
-    const toggleDimension = (dimension: Dimension) => {
-        setSelectedDimensions(prev => {
-            if (prev.includes(dimension.id)) {
-                return prev.filter(id => id !== dimension.id);
-            } else {
-                return [...prev, dimension.id];
-            }
-        });
-        // If dimension was pivoted, remove it from pivot when unselecting
-        if (pivotedDimensions.includes(dimension.id)) {
-            setPivotedDimensions(prev => prev.filter(id => id !== dimension.id));
-        }
-    };
-
-    const toggleMeasure = (measure: Measure) => {
-        setSelectedMeasures(prev => {
-            if (prev.includes(measure.id)) {
-                return prev.filter(id => id !== measure.id);
-            } else {
-                return [...prev, measure.id];
-            }
-        });
-    };
-
-    const togglePivot = (dimension: Dimension) => {
-        // Can only pivot if dimension is selected
-        if (!selectedDimensions.includes(dimension.id)) {
-            setSelectedDimensions(prev => [...prev, dimension.id]);
-        }
-        setPivotedDimensions(prev => {
-            if (prev.includes(dimension.id)) {
-                return prev.filter(id => id !== dimension.id);
-            } else {
-                return [...prev, dimension.id];
-            }
-        });
-    };
-
-    const moveItem = useCallback((listId: string, dragIndex: number, hoverIndex: number) => {
-        switch (listId) {
-            case 'selected-dimensions': {
-                setSelectedDimensions(prev => {
-                    const nonPivoted = prev.filter(id => !pivotedDimensions.includes(id));
-                    const pivoted = prev.filter(id => pivotedDimensions.includes(id));
-                    const newList = [...nonPivoted];
-                    const [movedItem] = newList.splice(dragIndex, 1);
-                    newList.splice(hoverIndex, 0, movedItem);
-                    return [...newList, ...pivoted];
-                });
-                break;
-            }
-            case 'pivoted-dimensions': {
-                setPivotedDimensions(prev => {
-                    const newList = [...prev];
-                    const [movedItem] = newList.splice(dragIndex, 1);
-                    newList.splice(hoverIndex, 0, movedItem);
-                    return newList;
-                });
-                break;
-            }
-            case 'selected-measures': {
-                setSelectedMeasures(prev => {
-                    const newList = [...prev];
-                    const [movedItem] = newList.splice(dragIndex, 1);
-                    newList.splice(hoverIndex, 0, movedItem);
-                    return newList;
-                });
-                break;
-            }
-        }
-    }, [pivotedDimensions]);
-
-    function handleDataChange() {
-        if (selectedDimensions.length === 0 && selectedMeasures.length === 0) {
-            setAggregatedData(null);
-            return;
-        }
-
-        const aggregator = new DataAggregator(dataset);
-        const result = aggregator.aggregate({
-            dimensions: [...new Array<string>().concat(selectedDimensions)],
-            measures: measures.filter(measure => selectedMeasures.includes(measure.id)).map(measure => {
-                return {
-                    field: measure.id,
-                    type: measure.aggregate
-                }
-            }),
-        });
-        setAggregatedData(result);
-    }
-
-    useEffect(handleDataChange, [selectedDimensions, selectedMeasures]);
-
-    useEffect(() => {
-        console.log("selectedDimensions changed")
-    }, [selectedDimensions]);
-
-    useEffect(() => {
-        console.log("selectedMeasures changed")
-    }, [selectedMeasures]);
-
-    useEffect(() => {
-        console.log("pivotedDimensions changed")
-    }, [pivotedDimensions]);
-
-    useEffect(() => {
-        console.log("handleDataChange changed")
-    }, [handleDataChange]);
-
-
-    const buttonStyle = {
-        border: 'none',
-        padding: '6px 16px',
-        borderRadius: '20px',
-        cursor: 'pointer',
-        fontSize: '14px',
-        fontWeight: 500,
-        textTransform: 'uppercase' as const,
-        transition: 'background-color 0.3s',
-        marginLeft: '8px',
-        outline: 'none',
-        boxShadow: '0 2px 4px rgba(0,0,0,0.1)'
-    };
     return (
-        <DndProvider backend={HTML5Backend}>
-            <div style={{ display: 'flex', height: '100vh', flexDirection: 'column' }}>
-                <div style={{ display: 'flex', flex: 1, minHeight: 0 }}>
+        <div className="interactive-wrapper">
+            <div className="info-section">
+                <div
+                    className="info-header"
+                    onClick={() => setIsInfoVisible(!isInfoVisible)}
+                >
+                    <h2>About This Demo</h2>
+                    <button className={`collapse-button ${isInfoVisible ? 'expanded' : ''}`}>
+                        <i className={`fa ${isInfoVisible ? 'fa-chevron-up' : 'fa-chevron-down'}`}></i>
+                    </button>
+                </div>
+
+                {isInfoVisible && (
+                    <div className="info-content">
+                        <h3>Dataset: Fuel Consumption</h3>
+                        <p>
+                            This demo uses a dataset containing vehicle fuel consumption ratings.
+                            The data includes various vehicle characteristics and their fuel efficiency metrics.
+                        </p>
+
+                        <h3>How to Use</h3>
+                        <ol>
+                            <li>
+                                <strong>Select Dimensions:</strong> Choose the vehicle characteristics
+                                you want to analyze (e.g., Make, Model, Vehicle Class)
+                            </li>
+                            <li>
+                                <strong>Add Measures:</strong> Select the metrics you want to view
+                                (e.g., Fuel Consumption, CO2 Emissions)
+                            </li>
+                            <li>
+                                <strong>Pivot Data:</strong> Use the "Pivot" button to rotate dimensions
+                                from rows to columns for different perspectives
+                            </li>
+                            <li>
+                                <strong>Reorder Fields:</strong> Drag and drop dimensions in the
+                                "Selected Dimensions" or "Pivoted Dimensions" sections to reorder them
+                            </li>
+                        </ol>
+
+                        <div className="info-tip">
+                            <strong>Tip:</strong> Try starting with one dimension and one measure,
+                            then gradually add more to explore the data in different ways.
+                        </div>
+                    </div>
+                )}
+            </div>
+            <DndProvider backend={HTML5Backend}>
+                <div className="interactive-layout">
                     {/* Left Sidebar */}
-                    <div style={{
-                        width: '400px',
-                        borderRight: '1px solid #ccc',
-                        padding: '20px',
-                        backgroundColor: '#f5f5f5',
-                        overflowY: 'auto'
-                    }}>
-                        <div>
+                    <div className="interactive-sidebar">
+                        <div className="sidebar-section">
                             <h3>Dimensions</h3>
-                            {dimensions.map(dimension => (
-                                <div key={dimension.id} style={{
-                                    display: 'flex',
-                                    alignItems: 'center',
-                                    margin: '8px 0',
-                                    padding: '8px',
-                                    backgroundColor: selectedDimensions.includes(dimension.id) ? '#e0e0e0' : 'white',
-                                    borderRadius: '8px',
-                                    userSelect: 'none'
-                                }}>
-                                    <div style={{ flex: 1, pointerEvents: 'none' }}>
-                                        {dimension.name}
+                            <div className="field-list">
+                                {dimensions.map(dimension => (
+                                    <div key={dimension.id} className="field-item">
+                                        <span className="field-name">{dimension.name}</span>
+                                        <div className="field-actions">
+                                            <button
+                                                onClick={() => toggleDimension(dimension)}
+                                                className={`action-button ${selectedDimensions.includes(dimension.id) ? 'active' : ''}`}
+                                            >
+                                                {selectedDimensions.includes(dimension.id) ? 'Remove' : 'Add'}
+                                            </button>
+                                            <button
+                                                onClick={() => togglePivot(dimension)}
+                                                className={`action-button ${pivotedDimensions.includes(dimension.id) ? 'pivot-active' : ''}`}
+                                            >
+                                                Pivot
+                                            </button>
+                                        </div>
                                     </div>
-                                    <button
-                                        onClick={() => toggleDimension(dimension)}
-                                        style={{
-                                            ...buttonStyle,
-                                            backgroundColor: selectedDimensions.includes(dimension.id) ? '#a0a0a0' : '#e0e0e0',
-                                            color: selectedDimensions.includes(dimension.id) ? 'white' : 'black',
-                                        }}
-                                    >
-                                        {selectedDimensions.includes(dimension.id) ? 'Remove' : 'Add'}
-                                    </button>
-                                    <button
-                                        onClick={() => togglePivot(dimension)}
-                                        style={{
-                                            ...buttonStyle,
-                                            backgroundColor: pivotedDimensions.includes(dimension.id) ? '#2196f3' : '#e0e0e0',
-                                            color: pivotedDimensions.includes(dimension.id) ? 'white' : 'black',
-                                        }}
-                                    >
-                                        Pivot
-                                    </button>
-                                </div>
-                            ))}
+                                ))}
+                            </div>
                         </div>
 
-                        <div style={{ marginTop: '20px' }}>
+                        <div className="sidebar-section">
                             <h3>Measures</h3>
-                            {measures.map(measure => (
-                                <div key={measure.id} style={{
-                                    display: 'flex',
-                                    alignItems: 'center',
-                                    margin: '8px 0',
-                                    padding: '8px',
-                                    backgroundColor: selectedMeasures.includes(measure.id) ? '#ffe0e0' : 'white',
-                                    borderRadius: '8px',
-                                    userSelect: 'none'
-                                }}>
-                                    <div style={{ flex: 1, pointerEvents: 'none' }}>
-                                        {measure.name}
+                            <div className="field-list">
+                                {measures.map(measure => (
+                                    <div key={measure.id} className="field-item">
+                                        <span className="field-name">{measure.name}</span>
+                                        <button
+                                            onClick={() => toggleMeasure(measure)}
+                                            className={`action-button ${selectedMeasures.includes(measure.id) ? 'measure-active' : ''}`}
+                                        >
+                                            {selectedMeasures.includes(measure.id) ? 'Remove' : 'Add'}
+                                        </button>
                                     </div>
-                                    <button
-                                        onClick={() => toggleMeasure(measure)}
-                                        style={{
-                                            ...buttonStyle,
-                                            backgroundColor: selectedMeasures.includes(measure.id) ? '#ff4081' : '#e0e0e0',
-                                            color: selectedMeasures.includes(measure.id) ? 'white' : 'black',
-                                        }}
-                                    >
-                                        {selectedMeasures.includes(measure.id) ? 'Remove' : 'Add'}
-                                    </button>
-                                </div>
-                            ))}
+                                ))}
+                            </div>
                         </div>
                     </div>
 
                     {/* Main Content */}
-                    <div style={{ flex: 1, padding: '20px', display: 'flex', flexDirection: 'column', overflowY: 'auto' }}>
-                        <div style={{ marginBottom: '20px' }}>
-                            <div>
+                    <div className="interactive-content">
+                        <div className="selected-fields">
+                            <div className="field-section">
                                 <h3>Selected Dimensions</h3>
-                                <div
-                                    id="selected-dimensions"
-                                    style={{
-                                        display: 'flex',
-                                        flexWrap: 'wrap',
-                                        gap: '8px',
-                                        minHeight: '40px',
-                                        padding: '8px',
-                                        border: '1px dashed #ccc',
-                                        borderRadius: '4px',
-                                        alignItems: 'flex-start'
-                                    }}
-                                >
+                                <div className="draggable-container" id="selected-dimensions">
                                     {selectedDimensions
                                         .filter(id => !pivotedDimensions.includes(id))
                                         .map((dimensionId, index) => {
@@ -308,21 +145,10 @@ export default () => {
                                         })}
                                 </div>
                             </div>
-                            <div style={{ marginTop: '12px' }}>
+
+                            <div className="field-section">
                                 <h3>Pivoted Dimensions</h3>
-                                <div
-                                    id="pivoted-dimensions"
-                                    style={{
-                                        display: 'flex',
-                                        flexWrap: 'wrap',
-                                        gap: '8px',
-                                        minHeight: '40px',
-                                        padding: '8px',
-                                        border: '1px dashed #ccc',
-                                        borderRadius: '4px',
-                                        alignItems: 'flex-start'
-                                    }}
-                                >
+                                <div className="draggable-container" id="pivoted-dimensions">
                                     {pivotedDimensions.map((dimensionId, index) => {
                                         const dimension = dimensions.find(d => d.id === dimensionId)!;
                                         return (
@@ -340,60 +166,10 @@ export default () => {
                                     })}
                                 </div>
                             </div>
-
-                            <div style={{ marginTop: '12px' }}>
-                                <h3>Selected Measures</h3>
-                                <div
-                                    id="selected-measures"
-                                    style={{
-                                        display: 'flex',
-                                        flexWrap: 'wrap',
-                                        gap: '8px',
-                                        minHeight: '40px',
-                                        padding: '8px',
-                                        border: '1px dashed #ccc',
-                                        borderRadius: '4px',
-                                        alignItems: 'flex-start'
-                                    }}
-                                >
-                                    {selectedMeasures.map((measureId, index) => {
-                                        const measure = measures.find(m => m.id === measureId)!;
-                                        return (
-                                            <DraggableItem
-                                                key={measure.id}
-                                                id={measure.id}
-                                                index={index}
-                                                type="measure"
-                                                moveItem={(dragIndex, hoverIndex) =>
-                                                    moveItem('selected-measures', dragIndex, hoverIndex)}
-                                            >
-                                                {measure.name}
-                                            </DraggableItem>
-                                        );
-                                    })}
-                                </div>
-                            </div>
                         </div>
 
-                        {/* Table Section */}
-                        <div style={{
-                            flex: 1,
-                            border: '1px solid #e0e0e0',
-                            borderRadius: '8px',
-                            padding: '16px',
-                            backgroundColor: 'white'
-                        }}>
-                            <h3>Data Table</h3>
-                            {aggregatedData === null && <div style={{
-                                height: '100%',
-                                display: 'flex',
-                                alignItems: 'center',
-                                justifyContent: 'center',
-                                color: '#666'
-                            }}>
-                                Select dimensions and measures to display data
-                            </div>}
-                            {aggregatedData !== null && (
+                        <div className="pivot-table-container">
+                            {aggregatedData ? (
                                 <PivotTable
                                     rows={aggregatedData}
                                     fields={fields}
@@ -401,13 +177,15 @@ export default () => {
                                     measures={selectedMeasures}
                                     pivots={pivotedDimensions}
                                 />
+                            ) : (
+                                <div className="empty-state">
+                                    <p>Select dimensions and measures to display data</p>
+                                </div>
                             )}
-
-
                         </div>
                     </div>
                 </div>
-            </div>
-        </DndProvider >
+            </DndProvider>
+        </div >
     );
 };

@@ -36,7 +36,7 @@ body {
     flex-direction: column;
     min-height: 100vh;
     padding: 0 max(20px, 5%);
-    max-width: 1400px;
+    max-width: 1600px;
     margin: 0 auto;
 }
 
@@ -124,8 +124,7 @@ body {
 
 /* Page Layout */
 .page-container {
-    max-width: 1200px;
-    margin: 0 auto;
+    margin: 0 1rem;
     padding: 2rem 1rem;
 }
 

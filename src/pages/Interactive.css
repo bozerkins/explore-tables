@@ -1,0 +1,250 @@
+/* src/pages/Interactive.css */
+.interactive-layout {
+    display: flex;
+    height: calc(100vh - 300px);
+    flex-direction: row;
+    margin: 0;
+}
+
+.interactive-sidebar {
+    width: 400px;
+    background: #ffffff;
+    border-right: 1px solid #e0e0e0;
+    padding: 2rem 3rem;
+    overflow-y: auto;
+}
+
+.interactive-content {
+    flex: 1;
+    padding: 2rem 3rem;
+    overflow-y: auto;
+    background: #f8f9fa;
+}
+
+.sidebar-section {
+    margin-bottom: 2rem;
+}
+
+.sidebar-section h3 {
+    color: #3e5488;
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+
+.field-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.field-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.75rem 1rem;
+    background: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.field-name {
+    font-size: 0.95rem;
+    color: #2c3e50;
+}
+
+.field-actions {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.action-button {
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 6px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    background: #f0f2f5;
+    color: #2c3e50;
+}
+
+.action-button:hover {
+    background: #e4e7eb;
+}
+
+.action-button.active {
+    background: #3e5488;
+    color: white;
+}
+
+.action-button.pivot-active {
+    background: #4caf50;
+    color: white;
+}
+
+.action-button.measure-active {
+    background: #ff4081;
+    color: white;
+}
+
+.selected-fields {
+    margin-bottom: 2rem;
+}
+
+.field-section {
+    margin-bottom: 1.5rem;
+}
+
+.field-section h3 {
+    color: #3e5488;
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+
+.draggable-container {
+    min-height: 50px;
+    padding: 1rem;
+    background: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.pivot-table-container {
+    background: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    padding: 1.5rem;
+}
+
+.empty-state {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 200px;
+    color: #2c3e50;
+    font-size: 1.1rem;
+    text-align: center;
+    background: #f8f9fa;
+    border-radius: 8px;
+}
+
+.info-section {
+    margin: 0;
+    background: #ffffff;
+    border-radius: 0;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.05);
+}
+
+.info-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 3rem;
+    cursor: pointer;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.info-header h2 {
+    margin: 0;
+    color: #3e5488;
+    font-size: 1.5rem;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+}
+
+.info-content {
+    padding: 2rem 3rem;
+}
+
+.info-content h3 {
+    color: #3e5488;
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin: 0 0 1rem;
+}
+
+.info-content h3:not(:first-child) {
+    margin-top: 2rem;
+}
+
+.info-content p {
+    color: #2c3e50;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+}
+
+.info-content ol {
+    padding-left: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.info-content li {
+    color: #2c3e50;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+}
+
+.info-tip {
+    margin-top: 1.5rem;
+    padding: 1.25rem 1.5rem;
+    background: #f8f9fa;
+    border-left: 4px solid #3e5488;
+    border-radius: 0 4px 4px 0;
+}
+
+.info-tip strong {
+    color: #3e5488;
+}
+
+.collapse-button {
+    background: none;
+    border: none;
+    color: #3e5488;
+    cursor: pointer;
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    transition: transform 0.2s ease;
+}
+
+.collapse-button i {
+    font-size: 1rem;
+}
+
+.collapse-button:hover {
+    color: #2c3e50;
+}
+
+/* In Interactive.css */
+
+/* Target the specific route/component */
+.app>.interactive-wrapper {
+    margin: 3rem 0;
+    /* Match the app padding from App.css */
+}
+
+.interactive-wrapper .info-section {
+    margin-bottom: 3rem;
+    /* Space between info section and interactive layout */
+    background: #ffffff;
+    border-radius: 12px;
+    /* Restore border radius since we have margins now */
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.05);
+}
+
+.interactive-wrapper .interactive-layout {
+    background: #ffffff;
+    border-radius: 12px;
+    /* Add border radius to match info section */
+    overflow: hidden;
+    /* Ensure content doesn't overflow rounded corners */
+}
