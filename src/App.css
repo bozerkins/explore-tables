@@ -72,6 +72,22 @@ body {
     margin: 0 2rem;
 }
 
+.header-title-link {
+    color: var(--text-secondary);
+    text-decoration: none;
+    transition: opacity 0.3s ease;
+    cursor: pointer;
+}
+
+.header-title-link:hover {
+    opacity: 0.9;
+}
+
+.header-title-link h1 {
+    margin: 0;
+}
+
+
 .nav-links {
     list-style: none;
     display: flex;
@@ -259,7 +275,9 @@ body {
     color: var(--text-secondary);
     border-radius: 16px;
     margin-bottom: 2rem;
-    text-align: center;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .footer p {
@@ -267,6 +285,38 @@ body {
     font-size: 0.9rem;
     opacity: 0.9;
 }
+
+.footer-left {
+    text-align: left;
+}
+
+.footer-right {
+    text-align: right;
+}
+
+.footer-ai {
+    font-size: 0.8rem !important;
+    opacity: 0.7 !important;
+}
+
+.footer-ai i {
+    margin: 0 0.3rem;
+}
+
+/* Add responsive behavior for small screens */
+@media (max-width: 768px) {
+    .footer {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    .footer-left,
+    .footer-right {
+        text-align: center;
+    }
+}
+
+
 
 /* Next Section Link styles */
 .next-section {

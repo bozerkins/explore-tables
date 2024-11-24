@@ -18,7 +18,9 @@ const App: React.FC = () => {
                 {/* Header */}
                 <header className="header">
                     <div className="header-left">
-                        <h1>Explore Tables</h1>
+                        <Link to="/" className="header-title-link">
+                            <h1>Explore Tables</h1>
+                        </Link>
                     </div>
                     <nav className="header-nav">
                         <ul className="nav-links">
@@ -56,8 +58,14 @@ const App: React.FC = () => {
 
                 {/* Footer */}
                 <footer className="footer">
-                    <p>&copy; 2024 Pivot Table Demo Page</p>
+                    <div className="footer-left">
+                        <p>&copy; 2024 Explore Tables</p>
+                    </div>
+                    <div className="footer-right">
+                        <p className="footer-ai">Made with <i className="fa-solid fa-robot"></i> Amazon Q AI Assistant</p>
+                    </div>
                 </footer>
+
             </div>
         </HashRouter>
     );
