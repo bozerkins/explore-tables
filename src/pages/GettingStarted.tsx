@@ -31,10 +31,12 @@ const GettingStarted = () => {
                         <CodeBlock code={`npm install explore-tables`} />
                     </div>
                     <p>
-                        After installation, you can import the PivotTable component in your React components:
+                        After installation, you can import the PivotTable component and the default theme in your React components:
                     </p>
                     <div className="example-container">
-                        <CodeBlock code={`import { PivotTable } from 'explore-tables';`} />
+                        <CodeBlock code={`
+import { PivotTable } from 'explore-tables';
+import 'explore-tables/themes/default.css'; `} />
                     </div>
                 </section>
                 {/* Basic Usage Section - stays the same except remove h4 Result */}
@@ -164,8 +166,8 @@ const data = [
 
                 {/* Next Section Link */}
                 <div className="next-section">
-                    <Link to="/advanced-features">
-                        Next: Advanced Features →
+                    <Link to="/styled">
+                        Next: Styled tables →
                     </Link>
                 </div>
             </div>

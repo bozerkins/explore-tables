@@ -216,7 +216,7 @@ body {
 
 .result-container {
     background: var(--accent-light);
-    padding: 1.5rem;
+    padding: 1rem;
     border-radius: 8px;
     overflow: auto;
 }
