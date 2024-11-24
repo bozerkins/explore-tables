@@ -1,0 +1,149 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+
+/* Reset some styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-color: #3e5488;
+    --secondary-color: #883e54;
+    --background-color: #f8f9fd;
+    --surface-color: #ffffff;
+    --text-primary: #2c3e50;
+    --text-secondary: #ffffff;
+    --accent-light: #eef2f7;
+}
+
+body {
+    font-family: 'Inter', 'Segoe UI', sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-primary);
+    line-height: 1.6;
+}
+
+/* App Layout */
+.app {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    padding: 0 max(20px, 5%);
+}
+
+/* Header Styles */
+.header {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: var(--text-secondary);
+    padding: 2rem;
+    text-align: center;
+    border-radius: 16px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+    margin-top: 2rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(45deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0) 100%);
+    pointer-events: none;
+}
+
+.header h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+}
+
+/* Main Content */
+.mainContent {
+    padding: 3rem 1rem;
+    text-align: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.mainContent h2 {
+    font-size: 2rem;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+.mainContent p {
+    color: var(--text-primary);
+    font-size: 1.1rem;
+    max-width: 600px;
+    margin: 0 auto 2rem;
+}
+
+/* Demo Links */
+.demoLinks {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+    margin-top: 2rem;
+}
+
+.demoLinks li {
+    font-size: 1rem;
+}
+
+.demoLinks a {
+    text-decoration: none;
+    color: var(--primary-color);
+    background-color: var(--surface-color);
+    padding: 0.8rem 1.5rem;
+    border-radius: 12px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    border: 2px solid var(--accent-light);
+    display: inline-block;
+}
+
+.demoLinks a:hover {
+    background-color: var(--primary-color);
+    color: var(--text-secondary);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 20px rgba(62, 84, 136, 0.15);
+}
+
+/* Footer Styles */
+.footer {
+    background: var(--primary-color);
+    color: var(--text-secondary);
+    text-align: center;
+    padding: 1.5rem;
+    border-radius: 16px;
+    margin: 2rem 0;
+    font-size: 0.9rem;
+}
+
+/* Demo Section Styling */
+.demoSection {
+    background-color: var(--surface-color);
+    padding: 2rem;
+    margin-bottom: 2rem;
+    border-radius: 16px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+}
+
+.demoSection h2 {
+    color: var(--primary-color);
+    margin-bottom: 1.5rem;
+    font-size: 1.8rem;
+}
+
+.page-container {
+    flex-grow: 1;
+    padding: 2rem 0;
+}

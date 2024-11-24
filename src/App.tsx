@@ -1,10 +1,12 @@
+/* App.tsx */
 import { Route, Link, Routes, Navigate, HashRouter } from 'react-router-dom';
+import './App.css';
+import '../public/themes/default.css';
 import Randomized from "./pages/Randomized";
 import Tests from "./pages/Tests";
 import React from 'react';
 import Interactive from './pages/Interactive';
 import Home from './pages/Home';
-import '../public/themes/default.css';
 import Styled from './pages/Styled';
 import Sorted from './pages/Sorted';
 

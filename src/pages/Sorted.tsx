@@ -1,4 +1,4 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import { PivotTable, TableOverrideConfig, } from "../../lib/main"
 import { DatasetSorter, SortParameter } from "../datasets/DataSorter";
 
@@ -27,9 +27,13 @@ const rows = [
 
 
 export default () => {
-    const [sortState, setSortState] = useState<SortParameter[]>([]);
-    const [tableData, setTableData] = useState(rows);
-    const [originalData] = useState([...rows]); // Store original order
+    const [sortState, setSortState] = useState<SortParameter[]>([{ field: "species", "direction": "asc" }]);
+    const [tableData, setTableData] = useState((() => {
+        const defaultRows = [...rows];
+        const sorter = new DatasetSorter(defaultRows);
+        sorter.sort(sortState);
+        return defaultRows;
+    })());
 
     const handleSort = (field: string, event: React.MouseEvent) => {
         const sorter = new DatasetSorter(tableData);
@@ -62,7 +66,7 @@ export default () => {
             if (existingCriteriaIndex !== -1 && sortState.length === 1) {
                 if (sortState[0].direction === 'desc') {
                     // Third click: reset to original order
-                    setTableData([...originalData]);
+                    setTableData([...rows]);
                     setSortState([]);
                     return;
                 } else {
@@ -80,7 +84,7 @@ export default () => {
             sorter.sort(newSortState);
         } else {
             // Reset to original order if no sort parameters
-            setTableData([...originalData]);
+            setTableData([...rows]);
         }
 
         // Update state
