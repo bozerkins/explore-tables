@@ -1,4 +1,3 @@
-import React from "react";
 import { TableOverrideConfig } from "../../lib/main";
 
 export const styledElements: TableOverrideConfig = {

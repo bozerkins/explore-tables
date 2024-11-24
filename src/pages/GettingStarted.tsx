@@ -1,5 +1,4 @@
 // pages/GettingStarted.tsx
-import React from 'react';
 import PageTemplate from '../components/PageTemplate';
 import CodeBlock from '../components/CodeBlock';
 import { PivotTable } from "../../lib/main";

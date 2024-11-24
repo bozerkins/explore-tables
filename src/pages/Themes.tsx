@@ -1,8 +1,8 @@
 // pages/Themes.tsx
 import "./Themes.css"
 import '../../public/themes/default.css';
-import React, { useState } from 'react';
-import { PivotTable } from 'explore-tables';
+import { useState } from 'react';
+import { PivotTable } from '../../lib/main';
 import PageTemplate from '../components/PageTemplate';
 import CodeBlock from '../components/CodeBlock';
 import { Link } from 'react-router-dom';

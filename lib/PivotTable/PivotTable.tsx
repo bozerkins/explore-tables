@@ -1,4 +1,3 @@
-import React from "react";
 import PivotTableMatrix from "./PivotTableMatrix";
 import AggregatePivotTable from "./AggregatePivotTable";
 import PlainPivotTable from "./PlainPivotTable";

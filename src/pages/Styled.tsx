@@ -1,6 +1,5 @@
 // pages/CustomElements.tsx
-import React from 'react';
-import { PivotTable } from 'explore-tables';
+import { PivotTable } from '../../lib/main';
 import PageTemplate from '../components/PageTemplate';
 import CodeBlock from '../components/CodeBlock';
 import { styledElements } from '../examples/StyledElements';

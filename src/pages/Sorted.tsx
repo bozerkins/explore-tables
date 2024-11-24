@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { PivotTable, TableOverrideConfig, } from "../../lib/main"
 import { DatasetSorter, SortParameter } from "../datasets/DataSorter";
+import PageTemplate from "../components/PageTemplate";
+import CodeBlock from "../components/CodeBlock";
 
 const fields = [
     { id: 'species', name: 'Species' },
@@ -112,7 +114,6 @@ export default () => {
             if (empty) {
                 return <td className="explore-column-title explore-empty-sign" colSpan={colSpan}>&nbsp;</td>
             }
-            console.log("Column title");
             field = field || "";
             return (
                 <td
@@ -169,19 +170,109 @@ export default () => {
         }
     };
 
-    return <div className="page-container">
-        <div style={{ maxWidth: "750px", margin: "auto" }}>
-            <div style={{ marginBottom: '10px', fontSize: '0.9em', color: '#666' }}>
-                Click to sort by a single field. Shift+Click to sort by multiple fields.
+    return (
+        <PageTemplate
+            title="Sorted tables"
+            description="Learn how to override table elements and implement interactive functionality"
+        >
+            <div className="content-sections">
+                <section className="content-section">
+                    <h2>Overriding Table Elements</h2>
+                    <p>
+                        The explore table library allows you to override default table elements to add custom functionality.
+                        This is particularly useful when implementing features like sorting, custom styling, or interactive elements.
+                    </p>
+                    <p>
+                        Use default classes that come with explore tables or implement your own.
+                    </p>
+                    <p>
+                        Remember to handle empty use-case, since it's common in pivot tables with dynamic structure to render empty cells.
+                    </p>
+                    <CodeBlock code={`
+const styledTableElements: TableOverrideConfig = {
+    ColumnTitle: ({ title, field, colSpan, empty }) => {
+        if (empty) {
+            return <td className="explore-column-title explore-empty-sign" colSpan={colSpan}>&nbsp;</td>
+        }
+        return (
+            <td colSpan={colSpan} 
+                className="explore-column-title" 
+                style={{ cursor: 'pointer', userSelect: "none" }}
+                onClick={(event) => handleSort(field, event)}>{title}</td>
+        );
+    },
+    // other elements override ...
+};
+
+const handleSort = (field, event) => {
+    // sorting logic goes here ...
+}
+
+<PivotTable
+    elements={styledTableElements}
+    rows={rows}
+    fields={fields}
+    measures={["total"]}
+    dimensions={["species"]}
+    pivots={["habitat_type"]}
+/>
+`} />
+                    <p>
+                        The TableOverrideConfig allows you to customize various table elements:
+                    </p>
+                    <ul>
+                        <li>ColumnTitle - Header cells for regular columns</li>
+                        <li>PivotTitle - Header cells for pivot columns</li>
+                        <li>MeasureTitle - Header cells for measure columns</li>
+                    </ul>
+                </section>
+
+                <section className="content-section">
+                    <h2>Live Demo - Column Sorting</h2>
+                    <p>
+                        Try it out:
+                    </p>
+                    <ul>
+                        <li>Click any column header to sort</li>
+                        <li>Click again to reverse the sort direction</li>
+                        <li>Hold Shift and click to sort by multiple columns</li>
+                    </ul>
+                    <PivotTable
+                        rows={tableData}
+                        fields={fields}
+                        measures={["total"]}
+                        dimensions={["species"]}
+                        pivots={["habitat_type"]}
+                        elements={styledTableElements}
+                    />
+                </section>
+
+                <section className="content-section">
+                    <h2>Implementing Sorting</h2>
+                    <p>
+                        To implement sorting in your pivot table, you'll need to:
+                    </p>
+                    <ol>
+                        <li>
+                            <strong>Manage Sort State</strong>: Keep track of which columns are being sorted
+                            and in what direction using React state.
+                        </li>
+                        <li>
+                            <strong>Override Column Headers</strong>: Customize column headers to be clickable
+                            and display sort indicators.
+                        </li>
+                        <li>
+                            <strong>Handle Sort Events</strong>: Implement logic to update the sort state
+                            when users click on column headers.
+                        </li>
+                        <li>
+                            <strong>Apply Sorting</strong>: Sort the data according to the current sort state
+                            before passing it to the PivotTable.
+                        </li>
+                    </ol>
+                </section>
+
             </div>
-            <PivotTable
-                rows={tableData}
-                fields={fields}
-                measures={["total"]}
-                dimensions={["species"]}
-                pivots={["habitat_type"]}
-                elements={styledTableElements}
-            />
-        </div>
-    </div>
+        </PageTemplate>
+    );
 }
