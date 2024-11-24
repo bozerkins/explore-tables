@@ -1,6 +1,11 @@
 {
   "name": "explore-tables",
   "version": "0.0.0",
+  "homepage": "https://bozerkins.github.io/explore-tables/",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/bozerkins/explore-tables"
+  },
   "type": "module",
   "main": "dist/main.js",
   "types": "dist/main.d.ts",
@@ -17,10 +22,6 @@
       "import": "./dist/*.css",
       "require": "./dist/*.css"
     }
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/bozerkins/explore-tables"
   },
   "scripts": {
     "dev": "vite -c vite-app.config.js",
