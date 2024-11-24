@@ -1,0 +1,10 @@
+import { TableColumnTitleInterface, TableColumnValueInterface, TableElement } from './TableInterfaces';
+export declare const Table: TableElement;
+export declare const TableContainer: TableElement;
+export declare const TableRow: TableElement;
+export declare const ColumnTitle: TableColumnTitleInterface;
+export declare const ColumnValue: TableColumnValueInterface;
+export declare const PivotTitle: TableColumnTitleInterface;
+export declare const PivotValue: TableColumnValueInterface;
+export declare const MeasureTitle: TableColumnTitleInterface;
+export declare const MeasureValue: TableColumnValueInterface;
