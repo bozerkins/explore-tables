@@ -6,21 +6,31 @@ import { PivotTable } from '../../lib/main';
 import PageTemplate from '../components/PageTemplate';
 import CodeBlock from '../components/CodeBlock';
 import { Link } from 'react-router-dom';
+// themes for demo
+import night from '../../public/themes/night.css?raw';
+import ocean from '../../public/themes/ocean.css?raw';
+import forest from '../../public/themes/forest.css?raw';
+import sunset from '../../public/themes/sunset.css?raw';
+import royal from '../../public/themes/royal.css?raw';
+import mint from '../../public/themes/mint.css?raw';
+import berry from '../../public/themes/berry.css?raw';
+import sky from '../../public/themes/sky.css?raw';
+import earth from '../../public/themes/earth.css?raw';
 
 const Themes = () => {
     const [activeTheme, setActiveTheme] = useState('default');
 
     const themes = [
-        { id: 'default', name: 'Default' },
-        { id: 'night', name: 'Night' },
-        { id: 'ocean', name: 'Ocean' },
-        { id: 'forest', name: 'Forest' },
-        { id: 'sunset', name: 'Sunset' },
-        { id: 'royal', name: 'Royal' },
-        { id: 'mint', name: 'Mint' },
-        { id: 'berry', name: 'Berry' },
-        { id: 'sky', name: 'Sky' },
-        { id: 'earth', name: 'Earth' }
+        { id: 'default', name: 'Default', css: "" },
+        { id: 'night', name: 'Night', css: night },
+        { id: 'ocean', name: 'Ocean', css: ocean },
+        { id: 'forest', name: 'Forest', css: forest },
+        { id: 'sunset', name: 'Sunset', css: sunset },
+        { id: 'royal', name: 'Royal', css: royal },
+        { id: 'mint', name: 'Mint', css: mint },
+        { id: 'berry', name: 'Berry', css: berry },
+        { id: 'sky', name: 'Sky', css: sky },
+        { id: 'earth', name: 'Earth', css: earth }
     ];
 
 
@@ -92,8 +102,9 @@ const MyComponent = () => (
                         <CodeBlock code={codeExample} />
                         <div className={`result-container theme-${activeTheme}`}>
                             {(() => {
+                                const theme = themes.find(theme => activeTheme === theme.id);
                                 return <>
-                                    <link rel="stylesheet" href={`themes/${activeTheme}.css`} />
+                                    <style>{theme?.css}</style>
                                     <PivotTable
                                         rows={data}
                                         fields={fields}

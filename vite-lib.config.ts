@@ -4,6 +4,7 @@ import react from '@vitejs/plugin-react'
 import dts from 'vite-plugin-dts'
 
 export default defineConfig({
+  publicDir: "public",
   plugins: [
     react(),
     dts({
@@ -18,9 +19,8 @@ export default defineConfig({
     rollupOptions: {
       external: ['react', 'react/jsx-runtime'],
       output: {
-        assetFileNames: 'assets/[name][extname]',
         entryFileNames: '[name].js',
-      }
+      },
     },
     lib: {
       entry: resolve(__dirname, 'lib/main.ts'),
