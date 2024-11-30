@@ -23,6 +23,21 @@
       "require": "./dist/*.css"
     }
   },
+  "keywords": [
+    "react",
+    "table",
+    "tables",
+    "drag-and-drop",
+    "typescript",
+    "react-component",
+    "data-table",
+    "grid",
+    "datagrid",
+    "sortable",
+    "ui-component",
+    "react-table",
+    "responsive-table"
+  ],
   "scripts": {
     "dev": "vite -c vite-app.config.js",
     "lib-build": "tsc --p ./tsconfig.build.json && vite build -c vite-lib.config.js",
