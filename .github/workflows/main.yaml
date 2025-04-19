@@ -1,11 +1,11 @@
-name: Publish Package to npmjs
+name: CI/CD Pipeline
 on:
   release:
     types: [published]
   pull_request:
-    branches: [ main ]
+    branches: [ '*' ]  # Run on PRs from any branch
   push:
-    branches: [ main ]
+    branches: [ '*' ]  # Run on pushes to any branch
 
 jobs:
   test:
@@ -17,8 +17,11 @@ jobs:
           node-version: 'v22.1.0'
       - run: npm ci
       - run: npm test
+
   build:
     needs: test
+    # Only run this job on release publish
+    if: github.event_name == 'release' 
     runs-on: ubuntu-latest
     permissions:
       contents: read
