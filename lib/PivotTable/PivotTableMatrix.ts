@@ -50,13 +50,42 @@ class PivotTableMatrix {
         const measures = config.measures.filter(measure => fields.includes(measure));
         const columns = config.dimensions.filter(dimension => fields.includes(dimension));
         const pivots = config.pivots.filter(pivot => fields.includes(pivot));
+        const rows = isArrayOfArraysFormat(payload.rows)
+            ? convertToArrayOfObjects(payload.rows as Array<Array<any>>, fields)
+            : payload.rows;
 
-        const pivotValueMaps = createValueMaps(payload.rows, pivots);
-        const columnValueMaps = createValueMaps(payload.rows, columns);
-        const valueMapTree = createDataTree(payload.rows, columns, columnValueMaps, pivots, pivotValueMaps, measures);
+        const pivotValueMaps = createValueMaps(rows, pivots);
+        const columnValueMaps = createValueMaps(rows, columns);
+        const valueMapTree = createDataTree(rows, columns, columnValueMaps, pivots, pivotValueMaps, measures);
         const fieldMap = createFieldMap(payload.fields);
         return new PivotTableMatrix(measures, columns, pivots, valueMapTree, columnValueMaps, pivotValueMaps, fieldMap);
     }
+}
+
+function isArrayOfArraysFormat(rows: Array<any>) {
+    if (!Array.isArray(rows)) {
+        throw new Error("Property \"rows\" must be an array of elements");
+    }
+
+    for (let row of rows) {
+        if (!Array.isArray(row)) {
+            return false;
+        }
+    }
+
+    return true;
+}
+
+function convertToArrayOfObjects(rows: Array<Array<any>>, fields: string[]): Array<Record<string, any>> {
+    return rows.map(row => {
+        return fields.reduce((obj, field, index) => {
+            // Only add the value if it exists in the row array
+            if (row[index] !== undefined) {
+                obj[field] = row[index];
+            }
+            return obj;
+        }, {} as Record<string, any>);
+    });
 }
 
 function createValueMaps(rows: Array<any>, fields: Array<string>): Array<ValueMap> {

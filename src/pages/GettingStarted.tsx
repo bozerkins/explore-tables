@@ -162,6 +162,61 @@ const data = [
                         </div>
                     </div>
                 </section>
+                {/* Array Data Format Section */}
+                <section className="content-section">
+                    <h3>Using Array Data Format</h3>
+                    <p>
+                        The PivotTable component also supports data in array format. Here's how you can use arrays instead of objects:
+                    </p>
+                    <div className="example-container">
+                        <CodeBlock code={`
+// Data as array of arrays
+const arrayData = [
+    ['Furniture', 'Chair', 'North', 100],
+    ['Furniture', 'Table', 'North', 250],
+    ['Electronics', 'Phone', 'South', 300],
+    ['Electronics', 'Laptop', 'South', 1200]
+];
+
+<PivotTable 
+    rows={arrayData}
+    fields={[
+        { id: 'category', name: 'Category' },
+        { id: 'product', name: 'Product' },
+        { id: 'region', name: 'Region' },
+        { id: 'sales', name: 'Sales' }
+    ]}
+    dimensions={['category', 'product']}
+    measures={['sales']}
+    pivots={['region']}
+/>`} />
+                        <div className="result-container">
+                            <PivotTable
+                                rows={[
+                                    ['Furniture', 'Chair', 'North', 100],
+                                    ['Furniture', 'Table', 'North', 250],
+                                    ['Electronics', 'Phone', 'South', 300],
+                                    ['Electronics', 'Laptop', 'South', 1200]
+                                ]}
+                                fields={[
+                                    { id: 'category', name: 'Category' },
+                                    { id: 'product', name: 'Product' },
+                                    { id: 'region', name: 'Region' },
+                                    { id: 'sales', name: 'Sales' }
+                                ]}
+                                dimensions={['category', 'product']}
+                                measures={['sales']}
+                                pivots={['region']}
+                            />
+                        </div>
+                    </div>
+                    <p>
+                        When using array format, you can define custom IDs in the fields configuration.
+                        The field IDs are used to reference columns in your dimensions, measures, and pivots configurations,
+                        while the array indices determine which values are mapped to each field.
+                    </p>
+                </section>
+
 
                 {/* Next Section Link */}
                 <div className="next-section">
