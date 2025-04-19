@@ -1,0 +1,2968 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PivotTable renders table correctly for test case 0: Basic table: Basic table 1`] = `
+<div>
+  <div
+    class="explore-table-container explore-smooth-scroll"
+  >
+    <table
+      class="explore-table"
+    >
+      <tbody>
+        <tr
+          class="explore-table-row"
+        >
+          <td
+            class="explore-column-title"
+          >
+            Product
+          </td>
+          <td
+            class="explore-column-title"
+          >
+            Region
+          </td>
+          <td
+            class="explore-measure-title"
+          >
+            Revenue
+          </td>
+        </tr>
+        <tr
+          class="explore-table-row"
+        >
+          <td
+            class="explore-column-value"
+          >
+            Laptop Pro
+          </td>
+          <td
+            class="explore-column-value"
+          >
+            North America
+          </td>
+          <td
+            class="explore-measure-value"
+          >
+            125000
+          </td>
+        </tr>
+        <tr
+          class="explore-table-row"
+        >
+          <td
+            class="explore-column-value"
+          >
+            Tablet Air
+          </td>
+          <td
+            class="explore-column-value"
+          >
+            Europe
+          </td>
+          <td
+            class="explore-measure-value"
+          >
+            85000
+          </td>
+        </tr>
+        <tr
+          class="explore-table-row"
+        >
+          <td
+            class="explore-column-value"
+          >
+            SmartPhone X
+          </td>
+          <td
+            class="explore-column-value"
+          >
+            Asia Pacific
+          </td>
+          <td
+            class="explore-measure-value"
+          >
+            95000
+          </td>
+        </tr>
+        <tr
+          class="explore-table-row"
+        >
+          <td
+            class="explore-column-value"
+          >
+            Laptop Pro
+          </td>
+          <td
+            class="explore-column-value"
+          >
+            Europe
+          </td>
+          <td
+            class="explore-measure-value"
+          >
+            115000
+          </td>
+        </tr>
+        <tr
+          class="explore-table-row"
+        >
+          <td
+            class="explore-column-value"
+          >
+            SmartPhone X
+          </td>
+          <td
+            class="explore-column-value"
+          >
+            North America
+          </td>
+          <td
+            class="explore-measure-value"
+          >
+            78000
+          </td>
+        </tr>
+        <tr
+          class="explore-table-row"
+        >
+          <td
+            class="explore-column-value"
+          >
+            Tablet Air
+          </td>
+          <td
+            class="explore-column-value"
+          >
+            Asia Pacific
+          </td>
+          <td
+            class="explore-measure-value"
+          >
+            66000
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+`;
+
+exports[`PivotTable renders table correctly for test case 1: Basic table - only measures: Basic table - only measures 1`] = `
+<div>
+  <div
+    class="explore-table-container explore-smooth-scroll"
+  >
+    <table
+      class="explore-table"
+    >
+      <tbody>
+        <tr
+          class="explore-table-row"
+        >
+          <td
+            class="explore-measure-title"
+          >
+            Total Revenue
+          </td>
+        </tr>
+        <tr
+          class="explore-table-row"
+        >
+          <td
+            class="explore-measure-value"
+          >
+            564000
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+`;
+
+exports[`PivotTable renders table correctly for test case 2: Basic table - only measures, no data: Basic table - only measures, no data 1`] = `
+<div>
+  <div
+    class="explore-table-container explore-smooth-scroll"
+  >
+    <table
+      class="explore-table"
+    >
+      <tbody>
+        <tr
+          class="explore-table-row"
+        >
+          <td
+            class="explore-measure-title"
+          >
+            Total Revenue
+          </td>
+        </tr>
+        <tr
+          class="explore-table-row"
+        >
+          <td
+            class="explore-measure-value explore-empty-sign"
+          >
+            ∅
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+`;
+
+exports[`PivotTable renders table correctly for test case 3: Basic table - no measures: Basic table - no measures 1`] = `
+<div>
+  <div
+    class="explore-table-container explore-smooth-scroll"
+  >
+    <table
+      class="explore-table"
+    >
+      <tbody>
+        <tr
+          class="explore-table-row"
+        >
+          <td
+            class="explore-column-title"
+          >
+            Product
+          </td>
+          <td
+            class="explore-column-title"
+          >
+            Category
+          </td>
+          <td
+            class="explore-column-title"
+          >
+            Quantity
+          </td>
+        </tr>
+        <tr
+          class="explore-table-row"
+        >
+          <td
+            class="explore-column-value"
+          >
+            Laptop Pro
+          </td>
+          <td
+            class="explore-column-value"
+          >
+            Electronics
+          </td>
+          <td
+            class="explore-column-value"
+          >
+            230
+          </td>
+        </tr>
+        <tr
+          class="explore-table-row"
+        >
+          <td
+            class="explore-column-value"
+          >
+            Tablet Air
+          </td>
+          <td
+            class="explore-column-value"
+          >
+            Electronics
+          </td>
+          <td
+            class="explore-column-value"
+          >
+            340
+          </td>
+        </tr>
+        <tr
+          class="explore-table-row"
+        >
+          <td
+            class="explore-column-value"
+          >
+            SmartPhone X
+          </td>
+          <td
+            class="explore-column-value"
+          >
+            Mobile
+          </td>
+          <td
+            class="explore-column-value"
+          >
+            475
+          </td>
+        </tr>
+        <tr
+          class="explore-table-row"
+        >
+          <td
+            class="explore-column-value"
+          >
+            Laptop Pro
+          </td>
+          <td
+            class="explore-column-value"
+          >
+            Electronics
+          </td>
+          <td
+            class="explore-column-value"
+          >
+            250
+          </td>
+        </tr>
+        <tr
+          class="explore-table-row"
+        >
+          <td
+            class="explore-column-value"
+          >
+            SmartPhone X
+          </td>
+          <td
+            class="explore-column-value"
+          >
+            Mobile
+          </td>
+          <td
+            class="explore-column-value"
+          >
+            390
+          </td>
+        </tr>
+        <tr
+          class="explore-table-row"
+        >
+          <td
+            class="explore-column-value"
+          >
+            Tablet Air
+          </td>
+          <td
+            class="explore-column-value"
+          >
+            Electronics
+          </td>
+          <td
+            class="explore-column-value"
+          >
+            264
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+`;
+
+exports[`PivotTable renders table correctly for test case 4: Basic table - no rows: Basic table - no rows 1`] = `
+<div>
+  <div
+    class="explore-table-container explore-smooth-scroll"
+  >
+    <table
+      class="explore-table"
+    >
+      <tbody>
+        <tr
+          class="explore-table-row"
+        >
+          <td
+            class="explore-column-title"
+          >
+            Product
+          </td>
+          <td
+            class="explore-column-title"
+          >
+            Category
+          </td>
+          <td
+            class="explore-measure-title"
+          >
+            Quantity
+          </td>
+        </tr>
+        <tr
+          class="explore-table-row"
+        >
+          <td
+            class="explore-column-value explore-empty-sign"
+          >
+            ∅
+          </td>
+          <td
+            class="explore-column-value explore-empty-sign"
+          >
+            ∅
+          </td>
+          <td
+            class="explore-measure-value explore-empty-sign"
+          >
+            ∅
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+`;
+
+exports[`PivotTable renders table correctly for test case 5: Basic table - no rows, no measures: Basic table - no rows, no measures 1`] = `
+<div>
+  <div
+    class="explore-table-container explore-smooth-scroll"
+  >
+    <table
+      class="explore-table"
+    >
+      <tbody>
+        <tr
+          class="explore-table-row"
+        >
+          <td
+            class="explore-column-title"
+          >
+            Product
+          </td>
+          <td
+            class="explore-column-title"
+          >
+            Category
+          </td>
+          <td
+            class="explore-column-title"
+          >
+            Quantity
+          </td>
+        </tr>
+        <tr
+          class="explore-table-row"
+        >
+          <td
+            class="explore-column-value explore-empty-sign"
+          >
+            ∅
+          </td>
+          <td
+            class="explore-column-value explore-empty-sign"
+          >
+            ∅
+          </td>
+          <td
+            class="explore-column-value explore-empty-sign"
+          >
+            ∅
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+`;
+
+exports[`PivotTable renders table correctly for test case 6: Pivot table: Pivot table 1`] = `
+<div>
+  <div
+    class="explore-table-container explore-smooth-scroll"
+  >
+    <table
+      class="explore-table"
+    >
+      <tbody>
+        <tr
+          class="explore-table-row"
+        >
+          <td
+            class="explore-pivot-title"
+            colspan="1"
+          >
+            Region
+          </td>
+          <td
+            class="explore-pivot-value"
+            colspan="1"
+          >
+            North America
+          </td>
+          <td
+            class="explore-pivot-value"
+            colspan="1"
+          >
+            Europe
+          </td>
+          <td
+            class="explore-pivot-value"
+            colspan="1"
+          >
+            Asia Pacific
+          </td>
+        </tr>
+        <tr
+          class="explore-table-row"
+        >
+          <td
+            class="explore-column-title"
+          >
+            Product
+          </td>
+          <td
+            class="explore-measure-title"
+          >
+            Quantity
+          </td>
+          <td
+            class="explore-measure-title"
+          >
+            Quantity
+          </td>
+          <td
+            class="explore-measure-title"
+          >
+            Quantity
+          </td>
+        </tr>
+        <tr
+          class="explore-table-row"
+        >
+          <td
+            class="explore-column-value"
+          >
+            Laptop Pro
+          </td>
+          <td
+            class="explore-measure-value"
+          >
+            230
+          </td>
+          <td
+            class="explore-measure-value"
+          >
+            250
+          </td>
+          <td
+            class="explore-measure-value"
+          >
+            552
+          </td>
+        </tr>
+        <tr
+          class="explore-table-row"
+        >
+          <td
+            class="explore-column-value"
+          >
+            Tablet Air
+          </td>
+          <td
+            class="explore-measure-value"
+          >
+            321
+          </td>
+          <td
+            class="explore-measure-value"
+          >
+            340
+          </td>
+          <td
+            class="explore-measure-value"
+          >
+            264
+          </td>
+        </tr>
+        <tr
+          class="explore-table-row"
+        >
+          <td
+            class="explore-column-value"
+          >
+            SmartPhone X
+          </td>
+          <td
+            class="explore-measure-value"
+          >
+            390
+          </td>
+          <td
+            class="explore-measure-value"
+          >
+            521
+          </td>
+          <td
+            class="explore-measure-value"
+          >
+            475
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+`;
+
+exports[`PivotTable renders table correctly for test case 7: Pivot table - no columns: Pivot table - no columns 1`] = `
+<div>
+  <div
+    class="explore-table-container explore-smooth-scroll"
+  >
+    <table
+      class="explore-table"
+    >
+      <tbody>
+        <tr
+          class="explore-table-row"
+        >
+          <td
+            class="explore-pivot-title"
+            colspan="0"
+          >
+            Product
+          </td>
+          <td
+            class="explore-pivot-value"
+            colspan="1"
+          >
+            Laptop Pro
+          </td>
+          <td
+            class="explore-pivot-value"
+            colspan="1"
+          >
+            Tablet Air
+          </td>
+          <td
+            class="explore-pivot-value"
+            colspan="1"
+          >
+            SmartPhone X
+          </td>
+          <td
+            class="explore-pivot-value"
+            colspan="1"
+          >
+            Laptop Pro
+          </td>
+          <td
+            class="explore-pivot-value"
+            colspan="1"
+          >
+            SmartPhone X
+          </td>
+          <td
+            class="explore-pivot-value"
+            colspan="1"
+          >
+            Tablet Air
+          </td>
+          <td
+            class="explore-pivot-value"
+            colspan="1"
+          >
+            SmartPhone X
+          </td>
+          <td
+            class="explore-pivot-value"
+            colspan="1"
+          >
+            Laptop Pro
+          </td>
+          <td
+            class="explore-pivot-value"
+            colspan="1"
+          >
+            Tablet Air
+          </td>
+        </tr>
+        <tr
+          class="explore-table-row"
+        >
+          <td
+            class="explore-pivot-title"
+            colspan="0"
+          >
+            Region
+          </td>
+          <td
+            class="explore-pivot-value"
+            colspan="1"
+          >
+            North America
+          </td>
+          <td
+            class="explore-pivot-value"
+            colspan="1"
+          >
+            Europe
+          </td>
+          <td
+            class="explore-pivot-value"
+            colspan="1"
+          >
+            Asia Pacific
+          </td>
+          <td
+            class="explore-pivot-value"
+            colspan="1"
+          >
+            Europe
+          </td>
+          <td
+            class="explore-pivot-value"
+            colspan="1"
+          >
+            North America
+          </td>
+          <td
+            class="explore-pivot-value"
+            colspan="1"
+          >
+            Asia Pacific
+          </td>
+          <td
+            class="explore-pivot-value"
+            colspan="1"
+          >
+            Europe
+          </td>
+          <td
+            class="explore-pivot-value"
+            colspan="1"
+          >
+            Asia Pacific
+          </td>
+          <td
+            class="explore-pivot-value"
+            colspan="1"
+          >
+            North America
+          </td>
+        </tr>
+        <tr
+          class="explore-table-row"
+        >
+          <td
+            class="explore-column-title explore-empty-sign"
+          >
+             
+          </td>
+          <td
+            class="explore-measure-title"
+          >
+            Quantity
+          </td>
+          <td
+            class="explore-measure-title"
+          >
+            Quantity
+          </td>
+          <td
+            class="explore-measure-title"
+          >
+            Quantity
+          </td>
+          <td
+            class="explore-measure-title"
+          >
+            Quantity
+          </td>
+          <td
+            class="explore-measure-title"
+          >
+            Quantity
+          </td>
+          <td
+            class="explore-measure-title"
+          >
+            Quantity
+          </td>
+          <td
+            class="explore-measure-title"
+          >
+            Quantity
+          </td>
+          <td
+            class="explore-measure-title"
+          >
+            Quantity
+          </td>
+          <td
+            class="explore-measure-title"
+          >
+            Quantity
+          </td>
+        </tr>
+        <tr
+          class="explore-table-row"
+        >
+          <td
+            class="explore-column-value explore-empty-sign"
+          >
+            ∅
+          </td>
+          <td
+            class="explore-measure-value"
+          >
+            230
+          </td>
+          <td
+            class="explore-measure-value"
+          >
+            340
+          </td>
+          <td
+            class="explore-measure-value"
+          >
+            475
+          </td>
+          <td
+            class="explore-measure-value"
+          >
+            250
+          </td>
+          <td
+            class="explore-measure-value"
+          >
+            390
+          </td>
+          <td
+            class="explore-measure-value"
+          >
+            264
+          </td>
+          <td
+            class="explore-measure-value"
+          >
+            521
+          </td>
+          <td
+            class="explore-measure-value"
+          >
+            552
+          </td>
+          <td
+            class="explore-measure-value"
+          >
+            321
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+`;
+
+exports[`PivotTable renders table correctly for test case 8: Pivot table - no columns: Pivot table - no columns 1`] = `
+<div>
+  <div
+    class="explore-table-container explore-smooth-scroll"
+  >
+    <table
+      class="explore-table"
+    >
+      <tbody>
+        <tr
+          class="explore-table-row"
+        >
+          <td
+            class="explore-pivot-title"
+            colspan="0"
+          >
+            One
+          </td>
+          <td
+            class="explore-pivot-value"
+            colspan="2"
+          >
+            test
+          </td>
+          <td
+            class="explore-pivot-value"
+            colspan="2"
+          >
+            test2
+          </td>
+          <td
+            class="explore-pivot-value"
+            colspan="2"
+          >
+            test2
+          </td>
+          <td
+            class="explore-pivot-value"
+            colspan="2"
+          >
+            test2
+          </td>
+          <td
+            class="explore-pivot-value"
+            colspan="2"
+          >
+            test3
+          </td>
+          <td
+            class="explore-pivot-value"
+            colspan="2"
+          >
+            test4
+          </td>
+          <td
+            class="explore-pivot-value"
+            colspan="2"
+          >
+            test5
+          </td>
+          <td
+            class="explore-pivot-value"
+            colspan="2"
+          >
+            test6
+          </td>
+          <td
+            class="explore-pivot-value"
+            colspan="2"
+          >
+            test6
+          </td>
+        </tr>
+        <tr
+          class="explore-table-row"
+        >
+          <td
+            class="explore-pivot-title"
+            colspan="0"
+          >
+            Two
+          </td>
+          <td
+            class="explore-pivot-value"
+            colspan="2"
+          >
+            blabla
+          </td>
+          <td
+            class="explore-pivot-value"
+            colspan="2"
+          >
+            bkla
+          </td>
+          <td
+            class="explore-pivot-value"
+            colspan="2"
+          >
+            yolo
+          </td>
+          <td
+            class="explore-pivot-value"
+            colspan="2"
+          >
+            miau
+          </td>
+          <td
+            class="explore-pivot-value"
+            colspan="2"
+          >
+            yolo
+          </td>
+          <td
+            class="explore-pivot-value"
+            colspan="2"
+          >
+            kuku
+          </td>
+          <td
+            class="explore-pivot-value"
+            colspan="2"
+          >
+            yolo
+          </td>
+          <td
+            class="explore-pivot-value"
+            colspan="2"
+          >
+            yolo
+          </td>
+          <td
+            class="explore-pivot-value"
+            colspan="2"
+          >
+            miau
+          </td>
+        </tr>
+        <tr
+          class="explore-table-row"
+        >
+          <td
+            class="explore-column-title explore-empty-sign"
+          >
+             
+          </td>
+          <td
+            class="explore-measure-title"
+          >
+            Three
+          </td>
+          <td
+            class="explore-measure-title"
+          >
+            Four
+          </td>
+          <td
+            class="explore-measure-title"
+          >
+            Three
+          </td>
+          <td
+            class="explore-measure-title"
+          >
+            Four
+          </td>
+          <td
+            class="explore-measure-title"
+          >
+            Three
+          </td>
+          <td
+            class="explore-measure-title"
+          >
+            Four
+          </td>
+          <td
+            class="explore-measure-title"
+          >
+            Three
+          </td>
+          <td
+            class="explore-measure-title"
+          >
+            Four
+          </td>
+          <td
+            class="explore-measure-title"
+          >
+            Three
+          </td>
+          <td
+            class="explore-measure-title"
+          >
+            Four
+          </td>
+          <td
+            class="explore-measure-title"
+          >
+            Three
+          </td>
+          <td
+            class="explore-measure-title"
+          >
+            Four
+          </td>
+          <td
+            class="explore-measure-title"
+          >
+            Three
+          </td>
+          <td
+            class="explore-measure-title"
+          >
+            Four
+          </td>
+          <td
+            class="explore-measure-title"
+          >
+            Three
+          </td>
+          <td
+            class="explore-measure-title"
+          >
+            Four
+          </td>
+          <td
+            class="explore-measure-title"
+          >
+            Three
+          </td>
+          <td
+            class="explore-measure-title"
+          >
+            Four
+          </td>
+        </tr>
+        <tr
+          class="explore-table-row"
+        >
+          <td
+            class="explore-column-value explore-empty-sign"
+          >
+            ∅
+          </td>
+          <td
+            class="explore-measure-value"
+          >
+            23
+          </td>
+          <td
+            class="explore-measure-value"
+          >
+            512
+          </td>
+          <td
+            class="explore-measure-value"
+          >
+            3
+          </td>
+          <td
+            class="explore-measure-value"
+          >
+            214
+          </td>
+          <td
+            class="explore-measure-value"
+          >
+            521
+          </td>
+          <td
+            class="explore-measure-value"
+          >
+            512
+          </td>
+          <td
+            class="explore-measure-value"
+          >
+            521
+          </td>
+          <td
+            class="explore-measure-value"
+          >
+            33
+          </td>
+          <td
+            class="explore-measure-value"
+          >
+            552
+          </td>
+          <td
+            class="explore-measure-value"
+          >
+            512
+          </td>
+          <td
+            class="explore-measure-value"
+          >
+            21
+          </td>
+          <td
+            class="explore-measure-value"
+          >
+            512
+          </td>
+          <td
+            class="explore-measure-value"
+          >
+            33
+          </td>
+          <td
+            class="explore-measure-value"
+          >
+            421
+          </td>
+          <td
+            class="explore-measure-value"
+          >
+            51
+          </td>
+          <td
+            class="explore-measure-value"
+          >
+            11
+          </td>
+          <td
+            class="explore-measure-value"
+          >
+            112
+          </td>
+          <td
+            class="explore-measure-value"
+          >
+            512
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+`;
+
+exports[`PivotTable renders table correctly for test case 9: Pivot table - multiple measures: Pivot table - multiple measures 1`] = `
+<div>
+  <div
+    class="explore-table-container explore-smooth-scroll"
+  >
+    <table
+      class="explore-table"
+    >
+      <tbody>
+        <tr
+          class="explore-table-row"
+        >
+          <td
+            class="explore-pivot-title"
+            colspan="0"
+          >
+            Product
+          </td>
+          <td
+            class="explore-pivot-value"
+            colspan="2"
+          >
+            Laptop Pro
+          </td>
+          <td
+            class="explore-pivot-value"
+            colspan="2"
+          >
+            Tablet Air
+          </td>
+          <td
+            class="explore-pivot-value"
+            colspan="2"
+          >
+            SmartPhone X
+          </td>
+          <td
+            class="explore-pivot-value"
+            colspan="2"
+          >
+            Laptop Pro
+          </td>
+          <td
+            class="explore-pivot-value"
+            colspan="2"
+          >
+            SmartPhone X
+          </td>
+          <td
+            class="explore-pivot-value"
+            colspan="2"
+          >
+            Tablet Air
+          </td>
+          <td
+            class="explore-pivot-value"
+            colspan="2"
+          >
+            SmartPhone X
+          </td>
+          <td
+            class="explore-pivot-value"
+            colspan="2"
+          >
+            Laptop Pro
+          </td>
+          <td
+            class="explore-pivot-value"
+            colspan="2"
+          >
+            Tablet Air
+          </td>
+        </tr>
+        <tr
+          class="explore-table-row"
+        >
+          <td
+            class="explore-pivot-title"
+            colspan="0"
+          >
+            Region
+          </td>
+          <td
+            class="explore-pivot-value"
+            colspan="2"
+          >
+            North America
+          </td>
+          <td
+            class="explore-pivot-value"
+            colspan="2"
+          >
+            Europe
+          </td>
+          <td
+            class="explore-pivot-value"
+            colspan="2"
+          >
+            Asia Pacific
+          </td>
+          <td
+            class="explore-pivot-value"
+            colspan="2"
+          >
+            Europe
+          </td>
+          <td
+            class="explore-pivot-value"
+            colspan="2"
+          >
+            North America
+          </td>
+          <td
+            class="explore-pivot-value"
+            colspan="2"
+          >
+            Asia Pacific
+          </td>
+          <td
+            class="explore-pivot-value"
+            colspan="2"
+          >
+            Europe
+          </td>
+          <td
+            class="explore-pivot-value"
+            colspan="2"
+          >
+            Asia Pacific
+          </td>
+          <td
+            class="explore-pivot-value"
+            colspan="2"
+          >
+            North America
+          </td>
+        </tr>
+        <tr
+          class="explore-table-row"
+        >
+          <td
+            class="explore-column-title explore-empty-sign"
+          >
+             
+          </td>
+          <td
+            class="explore-measure-title"
+          >
+            Quantity
+          </td>
+          <td
+            class="explore-measure-title"
+          >
+            Revenue
+          </td>
+          <td
+            class="explore-measure-title"
+          >
+            Quantity
+          </td>
+          <td
+            class="explore-measure-title"
+          >
+            Revenue
+          </td>
+          <td
+            class="explore-measure-title"
+          >
+            Quantity
+          </td>
+          <td
+            class="explore-measure-title"
+          >
+            Revenue
+          </td>
+          <td
+            class="explore-measure-title"
+          >
+            Quantity
+          </td>
+          <td
+            class="explore-measure-title"
+          >
+            Revenue
+          </td>
+          <td
+            class="explore-measure-title"
+          >
+            Quantity
+          </td>
+          <td
+            class="explore-measure-title"
+          >
+            Revenue
+          </td>
+          <td
+            class="explore-measure-title"
+          >
+            Quantity
+          </td>
+          <td
+            class="explore-measure-title"
+          >
+            Revenue
+          </td>
+          <td
+            class="explore-measure-title"
+          >
+            Quantity
+          </td>
+          <td
+            class="explore-measure-title"
+          >
+            Revenue
+          </td>
+          <td
+            class="explore-measure-title"
+          >
+            Quantity
+          </td>
+          <td
+            class="explore-measure-title"
+          >
+            Revenue
+          </td>
+          <td
+            class="explore-measure-title"
+          >
+            Quantity
+          </td>
+          <td
+            class="explore-measure-title"
+          >
+            Revenue
+          </td>
+        </tr>
+        <tr
+          class="explore-table-row"
+        >
+          <td
+            class="explore-column-value explore-empty-sign"
+          >
+            ∅
+          </td>
+          <td
+            class="explore-measure-value"
+          >
+            230
+          </td>
+          <td
+            class="explore-measure-value"
+          >
+            345000
+          </td>
+          <td
+            class="explore-measure-value"
+          >
+            340
+          </td>
+          <td
+            class="explore-measure-value"
+          >
+            238000
+          </td>
+          <td
+            class="explore-measure-value"
+          >
+            475
+          </td>
+          <td
+            class="explore-measure-value"
+          >
+            332500
+          </td>
+          <td
+            class="explore-measure-value"
+          >
+            250
+          </td>
+          <td
+            class="explore-measure-value"
+          >
+            375000
+          </td>
+          <td
+            class="explore-measure-value"
+          >
+            390
+          </td>
+          <td
+            class="explore-measure-value"
+          >
+            273000
+          </td>
+          <td
+            class="explore-measure-value"
+          >
+            264
+          </td>
+          <td
+            class="explore-measure-value"
+          >
+            184800
+          </td>
+          <td
+            class="explore-measure-value"
+          >
+            521
+          </td>
+          <td
+            class="explore-measure-value"
+          >
+            364700
+          </td>
+          <td
+            class="explore-measure-value"
+          >
+            552
+          </td>
+          <td
+            class="explore-measure-value"
+          >
+            828000
+          </td>
+          <td
+            class="explore-measure-value"
+          >
+            321
+          </td>
+          <td
+            class="explore-measure-value"
+          >
+            224700
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+`;
+
+exports[`PivotTable renders table correctly for test case 10: Pivot table - no measures: Pivot table - no measures 1`] = `
+<div>
+  <div
+    class="explore-table-container explore-smooth-scroll"
+  >
+    <table
+      class="explore-table"
+    >
+      <tbody>
+        <tr
+          class="explore-table-row"
+        >
+          <td
+            class="explore-pivot-title"
+            colspan="2"
+          >
+            Product
+          </td>
+          <td
+            class="explore-pivot-value"
+            colspan="0"
+          >
+            Laptop Pro
+          </td>
+          <td
+            class="explore-pivot-value"
+            colspan="0"
+          >
+            Tablet Air
+          </td>
+          <td
+            class="explore-pivot-value"
+            colspan="0"
+          >
+            SmartPhone X
+          </td>
+          <td
+            class="explore-pivot-value"
+            colspan="0"
+          >
+            Laptop Pro
+          </td>
+          <td
+            class="explore-pivot-value"
+            colspan="0"
+          >
+            SmartPhone X
+          </td>
+          <td
+            class="explore-pivot-value"
+            colspan="0"
+          >
+            Tablet Air
+          </td>
+          <td
+            class="explore-pivot-value"
+            colspan="0"
+          >
+            SmartPhone X
+          </td>
+          <td
+            class="explore-pivot-value"
+            colspan="0"
+          >
+            Laptop Pro
+          </td>
+          <td
+            class="explore-pivot-value"
+            colspan="0"
+          >
+            Tablet Air
+          </td>
+        </tr>
+        <tr
+          class="explore-table-row"
+        >
+          <td
+            class="explore-pivot-title"
+            colspan="2"
+          >
+            Region
+          </td>
+          <td
+            class="explore-pivot-value"
+            colspan="0"
+          >
+            North America
+          </td>
+          <td
+            class="explore-pivot-value"
+            colspan="0"
+          >
+            Europe
+          </td>
+          <td
+            class="explore-pivot-value"
+            colspan="0"
+          >
+            Asia Pacific
+          </td>
+          <td
+            class="explore-pivot-value"
+            colspan="0"
+          >
+            Europe
+          </td>
+          <td
+            class="explore-pivot-value"
+            colspan="0"
+          >
+            North America
+          </td>
+          <td
+            class="explore-pivot-value"
+            colspan="0"
+          >
+            Asia Pacific
+          </td>
+          <td
+            class="explore-pivot-value"
+            colspan="0"
+          >
+            Europe
+          </td>
+          <td
+            class="explore-pivot-value"
+            colspan="0"
+          >
+            Asia Pacific
+          </td>
+          <td
+            class="explore-pivot-value"
+            colspan="0"
+          >
+            North America
+          </td>
+        </tr>
+        <tr
+          class="explore-table-row"
+        >
+          <td
+            class="explore-column-title"
+          >
+            Quantity
+          </td>
+          <td
+            class="explore-column-title"
+          >
+            Revenue
+          </td>
+          <td
+            class="explore-measure-title explore-empty-sign"
+          >
+             
+          </td>
+          <td
+            class="explore-measure-title explore-empty-sign"
+          >
+             
+          </td>
+          <td
+            class="explore-measure-title explore-empty-sign"
+          >
+             
+          </td>
+          <td
+            class="explore-measure-title explore-empty-sign"
+          >
+             
+          </td>
+          <td
+            class="explore-measure-title explore-empty-sign"
+          >
+             
+          </td>
+          <td
+            class="explore-measure-title explore-empty-sign"
+          >
+             
+          </td>
+          <td
+            class="explore-measure-title explore-empty-sign"
+          >
+             
+          </td>
+          <td
+            class="explore-measure-title explore-empty-sign"
+          >
+             
+          </td>
+          <td
+            class="explore-measure-title explore-empty-sign"
+          >
+             
+          </td>
+        </tr>
+        <tr
+          class="explore-table-row"
+        >
+          <td
+            class="explore-column-value"
+          >
+            230
+          </td>
+          <td
+            class="explore-column-value"
+          >
+            345000
+          </td>
+          <td
+            class="explore-measure-value explore-empty-sign"
+          >
+            ∅
+          </td>
+          <td
+            class="explore-measure-value explore-empty-sign"
+          >
+            ∅
+          </td>
+          <td
+            class="explore-measure-value explore-empty-sign"
+          >
+            ∅
+          </td>
+          <td
+            class="explore-measure-value explore-empty-sign"
+          >
+            ∅
+          </td>
+          <td
+            class="explore-measure-value explore-empty-sign"
+          >
+            ∅
+          </td>
+          <td
+            class="explore-measure-value explore-empty-sign"
+          >
+            ∅
+          </td>
+          <td
+            class="explore-measure-value explore-empty-sign"
+          >
+            ∅
+          </td>
+          <td
+            class="explore-measure-value explore-empty-sign"
+          >
+            ∅
+          </td>
+          <td
+            class="explore-measure-value explore-empty-sign"
+          >
+            ∅
+          </td>
+        </tr>
+        <tr
+          class="explore-table-row"
+        >
+          <td
+            class="explore-column-value"
+          >
+            340
+          </td>
+          <td
+            class="explore-column-value"
+          >
+            238000
+          </td>
+          <td
+            class="explore-measure-value explore-empty-sign"
+          >
+            ∅
+          </td>
+          <td
+            class="explore-measure-value explore-empty-sign"
+          >
+            ∅
+          </td>
+          <td
+            class="explore-measure-value explore-empty-sign"
+          >
+            ∅
+          </td>
+          <td
+            class="explore-measure-value explore-empty-sign"
+          >
+            ∅
+          </td>
+          <td
+            class="explore-measure-value explore-empty-sign"
+          >
+            ∅
+          </td>
+          <td
+            class="explore-measure-value explore-empty-sign"
+          >
+            ∅
+          </td>
+          <td
+            class="explore-measure-value explore-empty-sign"
+          >
+            ∅
+          </td>
+          <td
+            class="explore-measure-value explore-empty-sign"
+          >
+            ∅
+          </td>
+          <td
+            class="explore-measure-value explore-empty-sign"
+          >
+            ∅
+          </td>
+        </tr>
+        <tr
+          class="explore-table-row"
+        >
+          <td
+            class="explore-column-value"
+          >
+            475
+          </td>
+          <td
+            class="explore-column-value"
+          >
+            332500
+          </td>
+          <td
+            class="explore-measure-value explore-empty-sign"
+          >
+            ∅
+          </td>
+          <td
+            class="explore-measure-value explore-empty-sign"
+          >
+            ∅
+          </td>
+          <td
+            class="explore-measure-value explore-empty-sign"
+          >
+            ∅
+          </td>
+          <td
+            class="explore-measure-value explore-empty-sign"
+          >
+            ∅
+          </td>
+          <td
+            class="explore-measure-value explore-empty-sign"
+          >
+            ∅
+          </td>
+          <td
+            class="explore-measure-value explore-empty-sign"
+          >
+            ∅
+          </td>
+          <td
+            class="explore-measure-value explore-empty-sign"
+          >
+            ∅
+          </td>
+          <td
+            class="explore-measure-value explore-empty-sign"
+          >
+            ∅
+          </td>
+          <td
+            class="explore-measure-value explore-empty-sign"
+          >
+            ∅
+          </td>
+        </tr>
+        <tr
+          class="explore-table-row"
+        >
+          <td
+            class="explore-column-value"
+          >
+            250
+          </td>
+          <td
+            class="explore-column-value"
+          >
+            375000
+          </td>
+          <td
+            class="explore-measure-value explore-empty-sign"
+          >
+            ∅
+          </td>
+          <td
+            class="explore-measure-value explore-empty-sign"
+          >
+            ∅
+          </td>
+          <td
+            class="explore-measure-value explore-empty-sign"
+          >
+            ∅
+          </td>
+          <td
+            class="explore-measure-value explore-empty-sign"
+          >
+            ∅
+          </td>
+          <td
+            class="explore-measure-value explore-empty-sign"
+          >
+            ∅
+          </td>
+          <td
+            class="explore-measure-value explore-empty-sign"
+          >
+            ∅
+          </td>
+          <td
+            class="explore-measure-value explore-empty-sign"
+          >
+            ∅
+          </td>
+          <td
+            class="explore-measure-value explore-empty-sign"
+          >
+            ∅
+          </td>
+          <td
+            class="explore-measure-value explore-empty-sign"
+          >
+            ∅
+          </td>
+        </tr>
+        <tr
+          class="explore-table-row"
+        >
+          <td
+            class="explore-column-value"
+          >
+            390
+          </td>
+          <td
+            class="explore-column-value"
+          >
+            273000
+          </td>
+          <td
+            class="explore-measure-value explore-empty-sign"
+          >
+            ∅
+          </td>
+          <td
+            class="explore-measure-value explore-empty-sign"
+          >
+            ∅
+          </td>
+          <td
+            class="explore-measure-value explore-empty-sign"
+          >
+            ∅
+          </td>
+          <td
+            class="explore-measure-value explore-empty-sign"
+          >
+            ∅
+          </td>
+          <td
+            class="explore-measure-value explore-empty-sign"
+          >
+            ∅
+          </td>
+          <td
+            class="explore-measure-value explore-empty-sign"
+          >
+            ∅
+          </td>
+          <td
+            class="explore-measure-value explore-empty-sign"
+          >
+            ∅
+          </td>
+          <td
+            class="explore-measure-value explore-empty-sign"
+          >
+            ∅
+          </td>
+          <td
+            class="explore-measure-value explore-empty-sign"
+          >
+            ∅
+          </td>
+        </tr>
+        <tr
+          class="explore-table-row"
+        >
+          <td
+            class="explore-column-value"
+          >
+            264
+          </td>
+          <td
+            class="explore-column-value"
+          >
+            184800
+          </td>
+          <td
+            class="explore-measure-value explore-empty-sign"
+          >
+            ∅
+          </td>
+          <td
+            class="explore-measure-value explore-empty-sign"
+          >
+            ∅
+          </td>
+          <td
+            class="explore-measure-value explore-empty-sign"
+          >
+            ∅
+          </td>
+          <td
+            class="explore-measure-value explore-empty-sign"
+          >
+            ∅
+          </td>
+          <td
+            class="explore-measure-value explore-empty-sign"
+          >
+            ∅
+          </td>
+          <td
+            class="explore-measure-value explore-empty-sign"
+          >
+            ∅
+          </td>
+          <td
+            class="explore-measure-value explore-empty-sign"
+          >
+            ∅
+          </td>
+          <td
+            class="explore-measure-value explore-empty-sign"
+          >
+            ∅
+          </td>
+          <td
+            class="explore-measure-value explore-empty-sign"
+          >
+            ∅
+          </td>
+        </tr>
+        <tr
+          class="explore-table-row"
+        >
+          <td
+            class="explore-column-value"
+          >
+            521
+          </td>
+          <td
+            class="explore-column-value"
+          >
+            364700
+          </td>
+          <td
+            class="explore-measure-value explore-empty-sign"
+          >
+            ∅
+          </td>
+          <td
+            class="explore-measure-value explore-empty-sign"
+          >
+            ∅
+          </td>
+          <td
+            class="explore-measure-value explore-empty-sign"
+          >
+            ∅
+          </td>
+          <td
+            class="explore-measure-value explore-empty-sign"
+          >
+            ∅
+          </td>
+          <td
+            class="explore-measure-value explore-empty-sign"
+          >
+            ∅
+          </td>
+          <td
+            class="explore-measure-value explore-empty-sign"
+          >
+            ∅
+          </td>
+          <td
+            class="explore-measure-value explore-empty-sign"
+          >
+            ∅
+          </td>
+          <td
+            class="explore-measure-value explore-empty-sign"
+          >
+            ∅
+          </td>
+          <td
+            class="explore-measure-value explore-empty-sign"
+          >
+            ∅
+          </td>
+        </tr>
+        <tr
+          class="explore-table-row"
+        >
+          <td
+            class="explore-column-value"
+          >
+            552
+          </td>
+          <td
+            class="explore-column-value"
+          >
+            828000
+          </td>
+          <td
+            class="explore-measure-value explore-empty-sign"
+          >
+            ∅
+          </td>
+          <td
+            class="explore-measure-value explore-empty-sign"
+          >
+            ∅
+          </td>
+          <td
+            class="explore-measure-value explore-empty-sign"
+          >
+            ∅
+          </td>
+          <td
+            class="explore-measure-value explore-empty-sign"
+          >
+            ∅
+          </td>
+          <td
+            class="explore-measure-value explore-empty-sign"
+          >
+            ∅
+          </td>
+          <td
+            class="explore-measure-value explore-empty-sign"
+          >
+            ∅
+          </td>
+          <td
+            class="explore-measure-value explore-empty-sign"
+          >
+            ∅
+          </td>
+          <td
+            class="explore-measure-value explore-empty-sign"
+          >
+            ∅
+          </td>
+          <td
+            class="explore-measure-value explore-empty-sign"
+          >
+            ∅
+          </td>
+        </tr>
+        <tr
+          class="explore-table-row"
+        >
+          <td
+            class="explore-column-value"
+          >
+            321
+          </td>
+          <td
+            class="explore-column-value"
+          >
+            224700
+          </td>
+          <td
+            class="explore-measure-value explore-empty-sign"
+          >
+            ∅
+          </td>
+          <td
+            class="explore-measure-value explore-empty-sign"
+          >
+            ∅
+          </td>
+          <td
+            class="explore-measure-value explore-empty-sign"
+          >
+            ∅
+          </td>
+          <td
+            class="explore-measure-value explore-empty-sign"
+          >
+            ∅
+          </td>
+          <td
+            class="explore-measure-value explore-empty-sign"
+          >
+            ∅
+          </td>
+          <td
+            class="explore-measure-value explore-empty-sign"
+          >
+            ∅
+          </td>
+          <td
+            class="explore-measure-value explore-empty-sign"
+          >
+            ∅
+          </td>
+          <td
+            class="explore-measure-value explore-empty-sign"
+          >
+            ∅
+          </td>
+          <td
+            class="explore-measure-value explore-empty-sign"
+          >
+            ∅
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+`;
+
+exports[`PivotTable renders table correctly for test case 11: Pivot table - no columns, no measures: Pivot table - no columns, no measures 1`] = `
+<div>
+  <div
+    class="explore-table-container explore-smooth-scroll"
+  >
+    <table
+      class="explore-table"
+    >
+      <tbody>
+        <tr
+          class="explore-table-row"
+        >
+          <td
+            class="explore-pivot-title"
+            colspan="0"
+          >
+            Product
+          </td>
+          <td
+            class="explore-pivot-value"
+            colspan="0"
+          >
+            Laptop
+          </td>
+          <td
+            class="explore-pivot-value"
+            colspan="0"
+          >
+            Desktop
+          </td>
+          <td
+            class="explore-pivot-value"
+            colspan="0"
+          >
+            Desktop
+          </td>
+          <td
+            class="explore-pivot-value"
+            colspan="0"
+          >
+            Desktop
+          </td>
+          <td
+            class="explore-pivot-value"
+            colspan="0"
+          >
+            Tablet
+          </td>
+          <td
+            class="explore-pivot-value"
+            colspan="0"
+          >
+            Phone
+          </td>
+          <td
+            class="explore-pivot-value"
+            colspan="0"
+          >
+            Monitor
+          </td>
+          <td
+            class="explore-pivot-value"
+            colspan="0"
+          >
+            Printer
+          </td>
+          <td
+            class="explore-pivot-value"
+            colspan="0"
+          >
+            Printer
+          </td>
+        </tr>
+        <tr
+          class="explore-table-row"
+        >
+          <td
+            class="explore-pivot-title"
+            colspan="0"
+          >
+            Region
+          </td>
+          <td
+            class="explore-pivot-value"
+            colspan="0"
+          >
+            North
+          </td>
+          <td
+            class="explore-pivot-value"
+            colspan="0"
+          >
+            South
+          </td>
+          <td
+            class="explore-pivot-value"
+            colspan="0"
+          >
+            East
+          </td>
+          <td
+            class="explore-pivot-value"
+            colspan="0"
+          >
+            West
+          </td>
+          <td
+            class="explore-pivot-value"
+            colspan="0"
+          >
+            East
+          </td>
+          <td
+            class="explore-pivot-value"
+            colspan="0"
+          >
+            Central
+          </td>
+          <td
+            class="explore-pivot-value"
+            colspan="0"
+          >
+            East
+          </td>
+          <td
+            class="explore-pivot-value"
+            colspan="0"
+          >
+            East
+          </td>
+          <td
+            class="explore-pivot-value"
+            colspan="0"
+          >
+            West
+          </td>
+        </tr>
+        <tr
+          class="explore-table-row"
+        >
+          <td
+            class="explore-pivot-title"
+            colspan="0"
+          >
+            Sales
+          </td>
+          <td
+            class="explore-pivot-value"
+            colspan="0"
+          >
+            230
+          </td>
+          <td
+            class="explore-pivot-value"
+            colspan="0"
+          >
+            310
+          </td>
+          <td
+            class="explore-pivot-value"
+            colspan="0"
+          >
+            521
+          </td>
+          <td
+            class="explore-pivot-value"
+            colspan="0"
+          >
+            521
+          </td>
+          <td
+            class="explore-pivot-value"
+            colspan="0"
+          >
+            552
+          </td>
+          <td
+            class="explore-pivot-value"
+            colspan="0"
+          >
+            210
+          </td>
+          <td
+            class="explore-pivot-value"
+            colspan="0"
+          >
+            330
+          </td>
+          <td
+            class="explore-pivot-value"
+            colspan="0"
+          >
+            510
+          </td>
+          <td
+            class="explore-pivot-value"
+            colspan="0"
+          >
+            412
+          </td>
+        </tr>
+        <tr
+          class="explore-table-row"
+        >
+          <td
+            class="explore-column-title explore-empty-sign"
+          >
+             
+          </td>
+          <td
+            class="explore-measure-title explore-empty-sign"
+          >
+             
+          </td>
+          <td
+            class="explore-measure-title explore-empty-sign"
+          >
+             
+          </td>
+          <td
+            class="explore-measure-title explore-empty-sign"
+          >
+             
+          </td>
+          <td
+            class="explore-measure-title explore-empty-sign"
+          >
+             
+          </td>
+          <td
+            class="explore-measure-title explore-empty-sign"
+          >
+             
+          </td>
+          <td
+            class="explore-measure-title explore-empty-sign"
+          >
+             
+          </td>
+          <td
+            class="explore-measure-title explore-empty-sign"
+          >
+             
+          </td>
+          <td
+            class="explore-measure-title explore-empty-sign"
+          >
+             
+          </td>
+          <td
+            class="explore-measure-title explore-empty-sign"
+          >
+             
+          </td>
+        </tr>
+        <tr
+          class="explore-table-row"
+        >
+          <td
+            class="explore-column-value explore-empty-sign"
+          >
+            ∅
+          </td>
+          <td
+            class="explore-measure-value explore-empty-sign"
+          >
+            ∅
+          </td>
+          <td
+            class="explore-measure-value explore-empty-sign"
+          >
+            ∅
+          </td>
+          <td
+            class="explore-measure-value explore-empty-sign"
+          >
+            ∅
+          </td>
+          <td
+            class="explore-measure-value explore-empty-sign"
+          >
+            ∅
+          </td>
+          <td
+            class="explore-measure-value explore-empty-sign"
+          >
+            ∅
+          </td>
+          <td
+            class="explore-measure-value explore-empty-sign"
+          >
+            ∅
+          </td>
+          <td
+            class="explore-measure-value explore-empty-sign"
+          >
+            ∅
+          </td>
+          <td
+            class="explore-measure-value explore-empty-sign"
+          >
+            ∅
+          </td>
+          <td
+            class="explore-measure-value explore-empty-sign"
+          >
+            ∅
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+`;
+
+exports[`PivotTable renders table correctly for test case 12: Pivot table - no rows: Pivot table - no rows 1`] = `
+<div>
+  <div
+    class="explore-table-container explore-smooth-scroll"
+  >
+    <table
+      class="explore-table"
+    >
+      <tbody>
+        <tr
+          class="explore-table-row"
+        >
+          <td
+            class="explore-pivot-title"
+            colspan="1"
+          >
+            Region
+          </td>
+          <td
+            class="explore-pivot-value explore-empty-sign"
+            colspan="1"
+          >
+            ∅
+          </td>
+        </tr>
+        <tr
+          class="explore-table-row"
+        >
+          <td
+            class="explore-column-title"
+          >
+            Product
+          </td>
+          <td
+            class="explore-measure-title"
+          >
+            Sales
+          </td>
+        </tr>
+        <tr
+          class="explore-table-row"
+        >
+          <td
+            class="explore-column-value explore-empty-sign"
+          >
+            ∅
+          </td>
+          <td
+            class="explore-measure-value explore-empty-sign"
+          >
+            ∅
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+`;
+
+exports[`PivotTable renders table correctly for test case 13: Pivot table - no rows, no measures: Pivot table - no rows, no measures 1`] = `
+<div>
+  <div
+    class="explore-table-container explore-smooth-scroll"
+  >
+    <table
+      class="explore-table"
+    >
+      <tbody>
+        <tr
+          class="explore-table-row"
+        >
+          <td
+            class="explore-pivot-title"
+            colspan="2"
+          >
+            Region
+          </td>
+          <td
+            class="explore-pivot-value explore-empty-sign"
+            colspan="0"
+          >
+            ∅
+          </td>
+        </tr>
+        <tr
+          class="explore-table-row"
+        >
+          <td
+            class="explore-column-title"
+          >
+            Product
+          </td>
+          <td
+            class="explore-column-title"
+          >
+            Sales
+          </td>
+          <td
+            class="explore-measure-title explore-empty-sign"
+          >
+             
+          </td>
+        </tr>
+        <tr
+          class="explore-table-row"
+        >
+          <td
+            class="explore-column-value explore-empty-sign"
+          >
+            ∅
+          </td>
+          <td
+            class="explore-column-value explore-empty-sign"
+          >
+            ∅
+          </td>
+          <td
+            class="explore-measure-value explore-empty-sign"
+          >
+            ∅
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+`;
+
+exports[`PivotTable renders table correctly for test case 14: Pivot table - no rows, no measures, no columns: Pivot table - no rows, no measures, no columns 1`] = `
+<div>
+  <div
+    class="explore-table-container explore-smooth-scroll"
+  >
+    <table
+      class="explore-table"
+    >
+      <tbody>
+        <tr
+          class="explore-table-row"
+        >
+          <td
+            class="explore-pivot-title"
+            colspan="0"
+          >
+            Product
+          </td>
+          <td
+            class="explore-pivot-value explore-empty-sign"
+            colspan="0"
+          >
+            ∅
+          </td>
+        </tr>
+        <tr
+          class="explore-table-row"
+        >
+          <td
+            class="explore-pivot-title"
+            colspan="0"
+          >
+            Region
+          </td>
+          <td
+            class="explore-pivot-value explore-empty-sign"
+            colspan="0"
+          >
+            ∅
+          </td>
+        </tr>
+        <tr
+          class="explore-table-row"
+        >
+          <td
+            class="explore-pivot-title"
+            colspan="0"
+          >
+            Sales
+          </td>
+          <td
+            class="explore-pivot-value explore-empty-sign"
+            colspan="0"
+          >
+            ∅
+          </td>
+        </tr>
+        <tr
+          class="explore-table-row"
+        >
+          <td
+            class="explore-column-title explore-empty-sign"
+          >
+             
+          </td>
+          <td
+            class="explore-measure-title explore-empty-sign"
+          >
+             
+          </td>
+        </tr>
+        <tr
+          class="explore-table-row"
+        >
+          <td
+            class="explore-column-value explore-empty-sign"
+          >
+            ∅
+          </td>
+          <td
+            class="explore-measure-value explore-empty-sign"
+          >
+            ∅
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+`;
+
+exports[`PivotTable renders table correctly for test case 15: Pivot table - no rows, no columns: Pivot table - no rows, no columns 1`] = `
+<div>
+  <div
+    class="explore-table-container explore-smooth-scroll"
+  >
+    <table
+      class="explore-table"
+    >
+      <tbody>
+        <tr
+          class="explore-table-row"
+        >
+          <td
+            class="explore-pivot-title"
+            colspan="0"
+          >
+            Product
+          </td>
+          <td
+            class="explore-pivot-value explore-empty-sign"
+            colspan="1"
+          >
+            ∅
+          </td>
+        </tr>
+        <tr
+          class="explore-table-row"
+        >
+          <td
+            class="explore-pivot-title"
+            colspan="0"
+          >
+            Region
+          </td>
+          <td
+            class="explore-pivot-value explore-empty-sign"
+            colspan="1"
+          >
+            ∅
+          </td>
+        </tr>
+        <tr
+          class="explore-table-row"
+        >
+          <td
+            class="explore-column-title explore-empty-sign"
+          >
+             
+          </td>
+          <td
+            class="explore-measure-title"
+          >
+            Sales
+          </td>
+        </tr>
+        <tr
+          class="explore-table-row"
+        >
+          <td
+            class="explore-column-value explore-empty-sign"
+          >
+            ∅
+          </td>
+          <td
+            class="explore-measure-value explore-empty-sign"
+          >
+            ∅
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+`;
+
+exports[`PivotTable renders table correctly for test case 16: Pivot table - no rows, no columns: Pivot table - no rows, no columns 1`] = `
+<div>
+  <div
+    class="explore-table-container explore-smooth-scroll"
+  >
+    <table
+      class="explore-table"
+    >
+      <tbody>
+        <tr
+          class="explore-table-row"
+        >
+          <td
+            class="explore-pivot-title"
+            colspan="0"
+          >
+            Product
+          </td>
+          <td
+            class="explore-pivot-value explore-empty-sign"
+            colspan="2"
+          >
+            ∅
+          </td>
+        </tr>
+        <tr
+          class="explore-table-row"
+        >
+          <td
+            class="explore-pivot-title"
+            colspan="0"
+          >
+            Region
+          </td>
+          <td
+            class="explore-pivot-value explore-empty-sign"
+            colspan="2"
+          >
+            ∅
+          </td>
+        </tr>
+        <tr
+          class="explore-table-row"
+        >
+          <td
+            class="explore-column-title explore-empty-sign"
+          >
+             
+          </td>
+          <td
+            class="explore-measure-title"
+          >
+            Sales
+          </td>
+          <td
+            class="explore-measure-title"
+          >
+            Units
+          </td>
+        </tr>
+        <tr
+          class="explore-table-row"
+        >
+          <td
+            class="explore-column-value explore-empty-sign"
+          >
+            ∅
+          </td>
+          <td
+            class="explore-measure-value explore-empty-sign"
+          >
+            ∅
+          </td>
+          <td
+            class="explore-measure-value explore-empty-sign"
+          >
+            ∅
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+`;
