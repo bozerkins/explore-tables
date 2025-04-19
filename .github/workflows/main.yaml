@@ -4,6 +4,8 @@ on:
     types: [published]
   pull_request:
     branches: [ '*' ]  # Run on PRs from any branch
+  push:
+    branches: [ 'main' ]  # Also run on pushes to main
 
 jobs:
   test:
